@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj": {}
+    "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj": {
+    "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj",
+        "projectUniqueName": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj",
         "projectName": "kogebogen",
-        "projectPath": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj",
+        "projectPath": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj",
         "packagesPath": "C:\\Users\\sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\obj\\",
+        "outputPath": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen---gruppe-3\\kogebogen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
