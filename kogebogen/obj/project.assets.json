@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Peter\\Documents\\GitHub\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj",
+      "projectUniqueName": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
       "projectName": "kogebogen",
-      "projectPath": "C:\\Users\\Peter\\Documents\\GitHub\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj",
+      "projectPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
       "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Peter\\Documents\\GitHub\\kogebogen---gruppe-3\\kogebogen\\obj\\",
+      "outputPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

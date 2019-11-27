@@ -6,30 +6,26 @@ using kogebogen.Models;
 
 namespace kogebogen.Repository
 {
-    public class Repository
+    public class Repositories
     {
-        public List<Recipe> CookBook;
+        public List<Recipe> CookBook = new List<Recipe>();
 
-        public Ingredients Salt;
-        public Ingredients Pepper;
-        public Ingredients Onion;
-        public Ingredients Garlic;
-        public Ingredients Beef;
-        public Ingredients TomatoSauce;
-        public Ingredients Oregano;
-
-        public Repository()
+        public Repositories()
         {
-            Recipe Lasagna = new Recipe();
-            Lasagna.Ingredients.Add(Pepper);
-            Lasagna.Ingredients.Add(Salt);
-            Lasagna.Ingredients.Add(Beef);
-            Lasagna.Ingredients.Add(Oregano);
-            Lasagna.Ingredients.Add(Onion);
-            Lasagna.Ingredients.Add(Garlic);
-            Lasagna.Ingredients.Add(TomatoSauce);
-            CookBook.Add(Lasagna);
+            Ingredient Beef = new Ingredient("Oksekød","g");
+            Ingredient Onion = new Ingredient("Løg", null);
 
+            Recipe Lasagna = new Recipe();
+            Lasagna.Ingredients.Add(new ModelIngredient(Beef, 200));
+            Lasagna.Ingredients.Add(new ModelIngredient(Onion, 1));
+            Lasagna.Name = "Lasagna";
+            Lasagna.TotalPrice = 40;
+            Lasagna.Time = 40;
+            CookBook.Add(Lasagna);
+            
+            Recipe SheperedsPie = new Recipe();
+            SheperedsPie.Ingredients.Add(new ModelIngredient(Beef, 300));
+            CookBook.Add(SheperedsPie);
         }
     }
 }
