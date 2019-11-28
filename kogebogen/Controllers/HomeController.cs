@@ -31,6 +31,13 @@ namespace kogebogen.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AddRecipe()
+        {
+
+            return View(repo);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
