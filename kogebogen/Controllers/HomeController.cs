@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using kogebogen.Models;
+using kogebogen.Repository;
 
 namespace kogebogen.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private Repositories repo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, Repositories repos)
         {
             _logger = logger;
+            repo = repos;
         }
 
         public IActionResult Index()
