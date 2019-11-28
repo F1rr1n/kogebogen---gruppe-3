@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj": {}
+    "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj": {
+    "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj",
+        "projectUniqueName": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
         "projectName": "kogebogen",
-        "projectPath": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\kogebogen.csproj",
-        "packagesPath": "C:\\Users\\sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarah\\Dropbox\\WD\\tværfaglig\\kogebogen\\obj\\",
+        "projectPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
+        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\sarah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,26 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
