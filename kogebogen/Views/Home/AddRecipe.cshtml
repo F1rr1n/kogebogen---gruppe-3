@@ -12,7 +12,7 @@
     <div id="ingredient">
         <p>
             Tilføj ingrediens: <input type="text" /> <input type="number" value="amount" />
-            <select>
+            <select required>
                 <option value="stk">stk</option>
                 <option value="g">g</option>
                 <option value="dl">dl</option>
@@ -24,7 +24,20 @@
 </div>
 
 
-<button onclick="meh()">Tilføj ingrediens</button>
+<button onclick="micro()">Tilføj ingrediens</button>
+<br />
+<input type="number" value="time" required /> tid i minutter
+<br />
+<div>
+    <ol id="description_steps">
+        <li><input type="text" required/></li>
+    </ol>
+</div>
+<button onclick="test()">Tilføj trin</button>
+
+<form method="post" asp-controller="" asp-action="">
+    <button type="submit">Tilføj opskrift</button>
+</form>
 <script src="~/js/AddIngredient.js">
 
 </script>
