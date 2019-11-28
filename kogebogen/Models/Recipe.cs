@@ -8,7 +8,7 @@ namespace kogebogen.Models
     public class Recipe
     {
         public string Name { get; set; }
-        public List<Ingredients> Ingredients;
+        public List<ModelIngredient> Ingredients = new List<ModelIngredient>();
         public int TotalPrice { get; set; }
         public string Description { get; set; }
         public string Guide { get; set; }

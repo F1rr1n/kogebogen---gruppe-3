@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using kogebogen.Repository;
 
 namespace kogebogen
 {
@@ -24,6 +25,8 @@ namespace kogebogen
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddSingleton<Repositories>(new Repositories());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
