@@ -11,7 +11,7 @@ namespace kogebogen.Models
         public List<ModelIngredient> Ingredients = new List<ModelIngredient>();
         public int TotalPrice { get; set; }
         public string Description { get; set; }
-        public string Guide { get; set; }
+        public List<string> Guide = new List<string>();
         public int Time { get; set; }
         public string ImageUrl { get; set; }
     }

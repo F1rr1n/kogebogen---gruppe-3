@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj": {}
+    "C:\\Users\\densk\\OneDrive\\Dokumenter\\Visual Studio 2019\\Projects\\Kogebogen\\kogebogen\\kogebogen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj": {
+    "C:\\Users\\densk\\OneDrive\\Dokumenter\\Visual Studio 2019\\Projects\\Kogebogen\\kogebogen\\kogebogen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
+        "projectUniqueName": "C:\\Users\\densk\\OneDrive\\Dokumenter\\Visual Studio 2019\\Projects\\Kogebogen\\kogebogen\\kogebogen.csproj",
         "projectName": "kogebogen",
-        "projectPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
-        "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\obj\\",
+        "projectPath": "C:\\Users\\densk\\OneDrive\\Dokumenter\\Visual Studio 2019\\Projects\\Kogebogen\\kogebogen\\kogebogen.csproj",
+        "packagesPath": "C:\\Users\\densk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\densk\\OneDrive\\Dokumenter\\Visual Studio 2019\\Projects\\Kogebogen\\kogebogen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\densk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
