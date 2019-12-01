@@ -9,9 +9,9 @@ namespace kogebogen.Models
     {
         public string Name { get; set; }
         public int Amount { get; set; }
-        public string Unit { get; set; }
+        public string? Unit { get; set; }
 
-        public Ingredients (string name, int amount, string unit)
+        public Ingredients (string name, int amount, string? unit)
         {
             this.Name = name;
             this.Amount = amount;

@@ -19,7 +19,6 @@ namespace kogebogen.Controllers
         {
             _logger = logger;
             repo = repos;
-            
         }
 
         public IActionResult Index()
@@ -33,39 +32,28 @@ namespace kogebogen.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddRecipeMenu()
+        public IActionResult AddRecipe()
         {
 
-            return View("AddRecipe", repo);
+            return View(repo);
         }
 
         [HttpPost]
-        public IActionResult AddRecipe(string title, List<string> ingredient, List<int> amount, List<string> unit, int time, List<string> step)
+        public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
         {
             Recipe r = new Recipe();
-
-            //foreach (string s in ingredient)
-            //{
-            //    int index = ingredient.FindIndex
-            //    Ingredient i = new Ingredient(s, unit[ingredient);
-            //    r.Ingredients.Add()
-            //}
             r.Name = title;
-            for(int i = 0; i < ingredient.Count; i++)
+            for (int i = 0; i < ingredients.Count;i++)
             {
-                Ingredient test = new Ingredient(ingredient[i], unit[i]);
-                ModelIngredient model = new ModelIngredient(test, amount[i]);
-                r.Ingredients.Add(model);
+                Ingredient inter = new Ingredient(ingredients[i], unit[i]);
+                ModelIngredient mo = new ModelIngredient(inter, amount[i]);
+                r.Ingredients.Add(mo);
             }
             r.Time = time;
-            foreach(string s in step)
-            {
-                r.Guide.Add(s);
-            }
+            r.Description = description;
             repo.CookBook.Add(r);
             return View("Index");
         }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

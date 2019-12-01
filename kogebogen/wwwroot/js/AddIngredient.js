@@ -2,8 +2,8 @@
 {
 
     let k = document.createElement("p");
-    var output = '<input type="text" required name="ingredient"/>' + '<input type="number" value="amount" name="amount" required />' +
-        '<select required name="unit">' +
+    var output = '<input type="text" name="ingredients" required/>' + '<input type="number" value="amount" name="amount" required/>' +
+        '<select name="unit" required>' +
         '<option value="stk">stk</option>' +
         '<option value="g">g</option>' +
         '<option value="dl">dl</option>' +
@@ -17,7 +17,7 @@
 function test()
 {
 
-    var k = '<li><input type="text" name="step" required/></li>';
+    var k = '<li><input type="text" name="guide" required/></li>';
     var test = document.getElementById("description_steps");
     test.innerHTML += k;
 
