@@ -1,0 +1,43 @@
+﻿@using kogebogen.Repository;
+@model Repositories
+@{
+    ViewData["Title"] = "Recipes";
+}
+
+<!-- Fontawesome - icons -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<h1>Recipes</h1>
+
+<button class="collapsible">Filtrer<i class="fas fa-sort-down"></i></button>
+<div class="content" style="display:none;">
+    <div class="slidecontainer">
+        <p id="filterPrice"></p>
+        20 kr <input type="range" class="slider" name="rangeInput" min="20" max="100" value="60"> 100 kr
+
+        <p id="filterTime"></p>
+        10 min <input type="range" class="slider" id="filterRange" name="rangeInput" min="10" max="120" value="55"> 120 min
+    </div>
+</div>
+
+<button class="collapsible">Sortér efter <i class="fas fa-sort-down"></i></button>
+<div class="content" style="display:none;">
+    <input type="checkbox" name="sorting" value="newest"> Nyeste <br />
+    <input type="checkbox" name="sorting" value="price1"> Pris lav til høj <br />
+    <input type="checkbox" name="sorting" value="price2"> Pris høj til lav <br />
+    <input type="checkbox" name="sorting" value="a-z"> A til Z <br />
+    <input type="checkbox" name="sorting" value="totalTime"> Tid i alt <br />
+</div>
+
+<div class="recipes">
+    @foreach (Recipe r in Repositories.CookBook)
+    {
+        <h2>@r.Name</h2>
+        <img src="@r.ImageUrl"/>
+    }
+</div>
+
+
+<script src="~/js/recipes.js">
+</script>
