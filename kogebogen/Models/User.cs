@@ -9,7 +9,8 @@ namespace kogebogen.Models
     {
         public string UserName { get; set; }
         public string Password { get; set; }
-        public List<Recipe> Favorites;
-        public List<Recipe> Own;
+        public List<Recipe> Favorites = new List<Recipe>();
+        public List<Recipe> Own = new List<Recipe>();
+
     }
 }

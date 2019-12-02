@@ -16,9 +16,18 @@
 
 function test()
 {
+    let j = document.createElement("li");
+    let k = '<input type="text" name="guide" required/>';
+    j.innerHTML += k;
+    document.getElementById("description_steps").appendChild(j);
+}
+function remove() {
+    var r = document.getElementById("ingredient").lastChild;
+    r.parentNode.removeChild(r)
+}
 
-    var k = '<li><input type="text" name="guide" required/></li>';
-    var test = document.getElementById("description_steps");
-    test.innerHTML += k;
 
+function fjerntrin() {
+    var f = document.getElementById("description_steps").lastChild;
+    f.parentNode.removeChild(f)
 }

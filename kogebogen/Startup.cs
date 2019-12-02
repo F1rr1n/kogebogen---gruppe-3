@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using kogebogen.Repository;
+using kogebogen.Models;
 
 namespace kogebogen
 {
@@ -27,6 +28,7 @@ namespace kogebogen
             services.AddControllersWithViews();
             services.AddMvc();
             services.AddSingleton<Repositories>(new Repositories());
+            services.AddSingleton<User>(new User());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
