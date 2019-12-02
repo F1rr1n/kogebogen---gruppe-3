@@ -9,7 +9,7 @@ namespace kogebogen.Repository
     public class Repositories
     {
         public List<Recipe> CookBook = new List<Recipe>();
-
+        
         public Repositories()
         {
             //Spices 

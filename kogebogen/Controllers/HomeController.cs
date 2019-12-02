@@ -14,11 +14,15 @@ namespace kogebogen.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private Repositories repo;
-
-        public HomeController(ILogger<HomeController> logger, Repositories repos)
+        private User u;
+        
+        public HomeController(ILogger<HomeController> logger, Repositories repos, User user)
         {
             _logger = logger;
             repo = repos;
+            u = user;
+            
+            
         }
 
         public IActionResult Index()
@@ -42,6 +46,11 @@ namespace kogebogen.Controllers
         {
             return View(repo);
         }
+        [HttpPost]
+        public IActionResult Myrecipes()
+        {
+            return View(u);
+        }
 
         [HttpPost]
         public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
@@ -57,7 +66,24 @@ namespace kogebogen.Controllers
             r.Time = time;
             r.Description = description;
             repo.CookBook.Add(r);
+            u.Own.Add(r);
             return View("Index");
+
+        }
+
+        [HttpPost]
+        public IActionResult RemoveRecipe(string r)
+        {
+            foreach(Recipe test in repo.CookBook)
+            {
+                if(test.Name == r)
+
+                {
+                    u.Own.Remove(test);
+                }
+            }
+            
+            return View("Myrecipes",u);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
