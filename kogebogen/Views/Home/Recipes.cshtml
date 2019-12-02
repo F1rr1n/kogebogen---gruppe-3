@@ -30,14 +30,14 @@
     <input type="checkbox" name="sorting" value="totalTime"> Tid i alt <br />
 </div>
 
-<div class="recipes">
-    @foreach (Recipe r in Model.CookBook)
-    {
+@foreach (Recipe r in Model.CookBook)
+{
+    <div class="flex-container" style="display:flex">
         <h2>@r.Name</h2>
-        <img src="@r.ImageUrl"/>
-    }
-</div>
-
+        <img src="@r.ImageUrl" />
+        <button class="fas fa-plus addToMy"></button>
+    </div>
+}
 
 <script src="~/js/recipes.js">
 </script>
