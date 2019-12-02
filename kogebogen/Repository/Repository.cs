@@ -8,7 +8,7 @@ namespace kogebogen.Repository
 {
     public class Repositories
     {
-        public static List<Recipe> CookBook = new List<Recipe>();
+        public List<Recipe> CookBook = new List<Recipe>();
 
         public Repositories()
         {

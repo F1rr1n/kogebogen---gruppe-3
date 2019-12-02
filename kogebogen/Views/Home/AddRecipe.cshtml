@@ -7,11 +7,11 @@
 
 <h1>AddRecipe</h1>
 <form method="post" asp-controller="Home" asp-action="AddRecipeTest">
-    <h3>Navn på opskrift: <input type="text" name="title" required/></h3>
+    <h3>Navn på opskrift: <input type="text" name="title" required /></h3>
     <div id="ingredients">
         <div id="ingredient">
             <p>
-                Tilføj ingrediens: <input type="text" name="ingredients" required/> <input type="number" value="amount" name="amount" required/>
+                Tilføj ingrediens: <input type="text" name="ingredients" required /> <input type="number" value="amount" name="amount" required />
                 <select required name="unit">
                     <option value="stk">stk</option>
                     <option value="g">g</option>
@@ -25,6 +25,7 @@
 
 
     <button onclick="micro()">Tilføj ingrediens</button>
+    <button onclick="remove()">Fjern ingediens</button>
     <br />
     <input type="number" value="time" name="time" required /> tid i minutter
     <br />
@@ -34,7 +35,7 @@
         </ol>
     </div>
     <button onclick="test()">Tilføj trin</button>
-
+    <button onclick="fjerntrin()">Fjern Trin</button>
 
     <button type="submit">Tilføj opskrift</button>
 </form>

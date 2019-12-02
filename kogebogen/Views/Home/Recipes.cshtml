@@ -31,7 +31,7 @@
 </div>
 
 <div class="recipes">
-    @foreach (Recipe r in Repositories.CookBook)
+    @foreach (Recipe r in Model.CookBook)
     {
         <h2>@r.Name</h2>
         <img src="@r.ImageUrl"/>

@@ -37,6 +37,11 @@ namespace kogebogen.Controllers
 
             return View(repo);
         }
+        [HttpPost]
+        public IActionResult Recipes()
+        {
+            return View(repo);
+        }
 
         [HttpPost]
         public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
