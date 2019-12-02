@@ -16,11 +16,10 @@
 
 function test()
 {
-
-    let k = '<li><input type="text" name="guide" required/></li>';
-    let test = document.getElementById("description_steps");
-    test.innerHTML += k;
-
+    let j = document.createElement("li");
+    let k = '<input type="text" name="guide" required/>';
+    j.innerHTML += k;
+    document.getElementById("description_steps").appendChild(j);
 }
 function remove() {
     var r = document.getElementById("ingredient").lastChild;

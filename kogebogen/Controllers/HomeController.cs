@@ -65,6 +65,10 @@ namespace kogebogen.Controllers
             }
             r.Time = time;
             r.Description = description;
+            foreach(string s in guide)
+            {
+                r.Guide.Add(s);
+            }
             repo.CookBook.Add(r);
             u.Own.Add(r);
             return View("Index");

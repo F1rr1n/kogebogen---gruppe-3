@@ -125,3 +125,5 @@ C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\bin\Debu
 C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\AddRecipe.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Myrecipes.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Recipes.cshtml.g.cs
