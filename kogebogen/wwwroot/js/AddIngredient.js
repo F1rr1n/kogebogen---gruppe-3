@@ -23,7 +23,7 @@ function test()
 
 }
 function remove() {
-    var r = document.getElementById("ingredient");
+    var r = document.getElementById("ingredient").lastChild;
     r.parentNode.removeChild(r)
 }
 
