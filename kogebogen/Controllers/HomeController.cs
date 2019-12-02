@@ -38,6 +38,22 @@ namespace kogebogen.Controllers
             return View(repo);
         }
 
+        [HttpPost]
+        public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
+        {
+            Recipe r = new Recipe();
+            r.Name = title;
+            for (int i = 0; i < ingredients.Count;i++)
+            {
+                Ingredient inter = new Ingredient(ingredients[i], unit[i]);
+                ModelIngredient mo = new ModelIngredient(inter, amount[i]);
+                r.Ingredients.Add(mo);
+            }
+            r.Time = time;
+            r.Description = description;
+            repo.CookBook.Add(r);
+            return View("Index");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
