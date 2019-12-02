@@ -11,7 +11,7 @@
         '<option value="spsk">spsk</option>' +
         '</select>';
     k.innerHTML += output;
-    document.getElementById("ingredient").appendChild(k);
+    document.getElementById("ingredients").appendChild(k);
 }
 
 function test()
@@ -22,7 +22,7 @@ function test()
     document.getElementById("description_steps").appendChild(j);
 }
 function remove() {
-    var r = document.getElementById("ingredient").lastChild;
+    var r = document.getElementById("ingredients").lastChild;
     r.parentNode.removeChild(r)
 }
 

@@ -1,0 +1,43 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "EditRecipe";
+}
+
+<h1>EditRecipe</h1>
+<h3>Navn på opskrift: <input type="text" name="title" required value="@Model.Name" /></h3>
+<div id="ingredients">
+    @foreach (ModelIngredient i in Model.Ingredients)
+    {
+        <div id="ingredient">
+            Tilføj ingrediens: <input type="text" name="ingredients" required value="@i.Ingredient.Name" /> <input type="number" name="amount" value="@i.amount" required />
+            <select required name="unit">
+                <option value="stk">stk</option>
+                <option value="g">g</option>
+                <option value="dl">dl</option>
+                <option value="tsk">tsk</option>
+                <option value="spsk">spsk</option>
+            </select>
+        </div>
+    }
+</div>
+<button onclick="micro()">Tilføj ingrediens</button>
+<button onclick="remove()">Fjern ingediens</button>
+<br />
+<input type="number" value="@Model.Time" name="time" required /> tid i minutter
+<br />
+<div>
+    <ol id="description_steps">
+        @foreach (string s in Model.Guide)
+        {
+            <li><input type="text" name="guide" value="@s" required /></li>
+        }
+        <li><input type="text" name="guide" required /></li>
+    </ol>
+</div>
+<button onclick="test()">Tilføj trin</button>
+<button onclick="fjerntrin()">Fjern Trin</button>
+
+<button type="submit">Tilføj opskrift</button>
+<script src="~/js/AddIngredient.js">
+
+</script>

@@ -21,12 +21,11 @@ namespace kogebogen.Controllers
             _logger = logger;
             repo = repos;
             u = user;
-            
-            
         }
 
         public IActionResult Index()
         {
+            u.Own.Add(repo.CookBook[3]);
             return View();
         }
 
@@ -88,6 +87,20 @@ namespace kogebogen.Controllers
             }
             
             return View("Myrecipes",u);
+        }
+
+        [HttpPost]
+        public IActionResult EditRecipe(string r)
+        {
+            Recipe rekt = new Recipe();
+            foreach (Recipe test in repo.CookBook)
+            {
+                if (test.Name == r)
+                {
+                    rekt = test;
+                }
+            }
+            return View(rekt);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

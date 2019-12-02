@@ -80,7 +80,7 @@ namespace kogebogen.Repository
             Lasagna.Ingredients.Add(new ModelIngredient(Salt, 3));
             Lasagna.Ingredients.Add(new ModelIngredient(Pepper, 1));
             Lasagna.Ingredients.Add(new ModelIngredient(Oregano, 2));
-            Lasagna.Name = "Lasagna";
+            Lasagna.Name = "Lasagne";
             Lasagna.TotalPrice = 40;
             Lasagna.Time = 40;
             CookBook.Add(Lasagna);
@@ -97,7 +97,7 @@ namespace kogebogen.Repository
             TomatoSoup.Ingredients.Add(new ModelIngredient(Vegatablestock, 1));
             TomatoSoup.Ingredients.Add(new ModelIngredient(Pepper, 2));
             TomatoSoup.Ingredients.Add(new ModelIngredient(Pasta, 200));
-            TomatoSoup.Name = "Tomatsuppe";
+            TomatoSoup.Name = "Tomat suppe";
             TomatoSoup.TotalPrice = 60;
             TomatoSoup.Time = 45;
             CookBook.Add(TomatoSoup);
@@ -157,7 +157,7 @@ namespace kogebogen.Repository
             BurningLove.Ingredients.Add(new ModelIngredient(Chives, 1));
             BurningLove.Ingredients.Add(new ModelIngredient(Beetroot, 400));
             BurningLove.Name = "Brændende kærlighed";
-            BurningLove.TotalPrice = 100;
+            BurningLove.TotalPrice = 101;
             BurningLove.Time = 45;
             CookBook.Add(BurningLove);
 
@@ -188,7 +188,7 @@ namespace kogebogen.Repository
             Noodles.Ingredients.Add(new ModelIngredient(HaricotsVerts, 100));
             Noodles.Name = "Nudler";
             Noodles.TotalPrice = 65;
-            Noodles.Time = 15;
+            Noodles.Time = 90;
             CookBook.Add(Noodles);
 
             Recipe Wok = new Recipe();
