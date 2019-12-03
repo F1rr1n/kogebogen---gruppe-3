@@ -129,6 +129,14 @@ namespace kogebogen.Controllers
             return View("Myrecipes", u);
         }
 
+
+        [HttpPost]
+        public IActionResult TheRecipe(int id)
+        {
+            Recipe rekt = repo.CookBook.Find(x => x.ID == id);
+            return View(rekt);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
