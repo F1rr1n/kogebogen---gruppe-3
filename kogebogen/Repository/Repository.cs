@@ -83,6 +83,7 @@ namespace kogebogen.Repository
             Lasagna.Name = "Lasagne";
             Lasagna.TotalPrice = 40;
             Lasagna.Time = 40;
+            Lasagna.ID = 0;
             CookBook.Add(Lasagna);
 
             Recipe TomatoSoup = new Recipe();
@@ -100,6 +101,7 @@ namespace kogebogen.Repository
             TomatoSoup.Name = "Tomat suppe";
             TomatoSoup.TotalPrice = 60;
             TomatoSoup.Time = 45;
+            TomatoSoup.ID = 1;
             CookBook.Add(TomatoSoup);
 
             Recipe MacNCheese = new Recipe();
@@ -117,6 +119,7 @@ namespace kogebogen.Repository
             MacNCheese.Name = "Mac'N'Cheese deluxe";
             MacNCheese.TotalPrice = 75;
             MacNCheese.Time = 35;
+            MacNCheese.ID = 2;
             CookBook.Add(MacNCheese);
 
             Recipe PastaPesto = new Recipe();
@@ -130,6 +133,7 @@ namespace kogebogen.Repository
             PastaPesto.Name = "Pasta-pestosalat m. kylling";
             PastaPesto.TotalPrice = 50;
             PastaPesto.Time = 20;
+            PastaPesto.ID = 3;
             CookBook.Add(PastaPesto);
 
             Recipe ChilliConCarne = new Recipe();
@@ -146,6 +150,7 @@ namespace kogebogen.Repository
             ChilliConCarne.Name = "Chili con carne";
             ChilliConCarne.TotalPrice = 60;
             ChilliConCarne.Time = 65;
+            ChilliConCarne.ID = 4;
             CookBook.Add(ChilliConCarne);
 
             Recipe BurningLove = new Recipe();
@@ -159,6 +164,7 @@ namespace kogebogen.Repository
             BurningLove.Name = "Brændende kærlighed";
             BurningLove.TotalPrice = 101;
             BurningLove.Time = 45;
+            BurningLove.ID = 5;
             CookBook.Add(BurningLove);
 
             Recipe Tacos = new Recipe();
@@ -177,6 +183,7 @@ namespace kogebogen.Repository
             Tacos.Name = "Taco";
             Tacos.TotalPrice = 34;
             Tacos.Time = 70;
+            Tacos.ID = 6;
             CookBook.Add(Tacos);
 
             Recipe Noodles = new Recipe();
@@ -189,6 +196,7 @@ namespace kogebogen.Repository
             Noodles.Name = "Nudler";
             Noodles.TotalPrice = 65;
             Noodles.Time = 90;
+            Noodles.ID = 7;
             CookBook.Add(Noodles);
 
             Recipe Wok = new Recipe();
@@ -200,6 +208,7 @@ namespace kogebogen.Repository
             Wok.Name = "Kyllinge wok";
             Wok.TotalPrice = 80;
             Wok.Time = 30;
+            Wok.ID = 8;
             CookBook.Add(Wok);
 
             Recipe SpaghettiMeatballs = new Recipe();
@@ -213,6 +222,7 @@ namespace kogebogen.Repository
             SpaghettiMeatballs.Name = "Spaghetti med kødboller";
             SpaghettiMeatballs.TotalPrice = 30; //Rigtig pris 
             SpaghettiMeatballs.Time = 30;
+            SpaghettiMeatballs.ID = 9;
             CookBook.Add(SpaghettiMeatballs);
         }
     }

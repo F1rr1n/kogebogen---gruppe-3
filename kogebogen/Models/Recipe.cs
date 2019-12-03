@@ -14,5 +14,6 @@ namespace kogebogen.Models
         public List<string> Guide = new List<string>();
         public int Time { get; set; }
         public string ImageUrl { get; set; }
+        public int ID { get; set; }
     }
 }

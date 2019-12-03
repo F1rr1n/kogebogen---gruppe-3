@@ -22,12 +22,12 @@ function test()
     document.getElementById("description_steps").appendChild(j);
 }
 function remove() {
-    var r = document.getElementById("ingredients").lastChild;
-    r.parentNode.removeChild(r)
+    var r = document.getElementById("ingredients").lastElementChild;
+    r.parentNode.removeChild(r);
 }
 
 
 function fjerntrin() {
-    var f = document.getElementById("description_steps").lastChild;
+    var f = document.getElementById("description_steps").lastElementChild;
     f.parentNode.removeChild(f)
 }

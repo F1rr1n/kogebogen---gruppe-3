@@ -15,7 +15,7 @@ namespace kogebogen.Controllers
         private readonly ILogger<HomeController> _logger;
         private Repositories repo;
         private User u;
-        
+
         public HomeController(ILogger<HomeController> logger, Repositories repos, User user)
         {
             _logger = logger;
@@ -26,6 +26,9 @@ namespace kogebogen.Controllers
         public IActionResult Index()
         {
             u.Own.Add(repo.CookBook[3]);
+            u.Own[0].Guide.Add("test1");
+            u.Own[0].Guide.Add("test2");
+            u.Own[0].Guide.Add("test3");
             return View();
         }
 
@@ -56,7 +59,7 @@ namespace kogebogen.Controllers
         {
             Recipe r = new Recipe();
             r.Name = title;
-            for (int i = 0; i < ingredients.Count;i++)
+            for (int i = 0; i < ingredients.Count; i++)
             {
                 Ingredient inter = new Ingredient(ingredients[i], unit[i]);
                 ModelIngredient mo = new ModelIngredient(inter, amount[i]);
@@ -64,10 +67,11 @@ namespace kogebogen.Controllers
             }
             r.Time = time;
             r.Description = description;
-            foreach(string s in guide)
+            foreach (string s in guide)
             {
                 r.Guide.Add(s);
             }
+            r.ID = repo.CookBook.Count;
             repo.CookBook.Add(r);
             u.Own.Add(r);
             return View("Index");
@@ -75,33 +79,56 @@ namespace kogebogen.Controllers
         }
 
         [HttpPost]
-        public IActionResult RemoveRecipe(string r)
+        public IActionResult RemoveRecipe(int r)
         {
-            foreach(Recipe test in repo.CookBook)
-            {
-                if(test.Name == r)
-
-                {
-                    u.Own.Remove(test);
-                }
-            }
-            
-            return View("Myrecipes",u);
+            Recipe test = repo.CookBook.Find(x => x.ID == r);
+            u.Own.Remove(test);
+            return View("Myrecipes", u);
         }
 
         [HttpPost]
-        public IActionResult EditRecipe(string r)
+        public IActionResult EditRecipeOpen(int r)
         {
-            Recipe rekt = new Recipe();
-            foreach (Recipe test in repo.CookBook)
+            Recipe rekt = repo.CookBook.Find(x => x.ID == r);
+            return View("EditRecipe", rekt);
+        }
+        [HttpPost]
+        public IActionResult EditRecipe(int id, string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
+        {
+            Recipe test = repo.CookBook.Find(x => x.ID == id);
+            test.Name = title;
+            for (int i = 0; i < ingredients.Count; i++)
             {
-                if (test.Name == r)
+                if (i >= test.Ingredients.Count)
                 {
-                    rekt = test;
+                    Ingredient inter = new Ingredient(ingredients[i], unit[i]);
+                    ModelIngredient mo = new ModelIngredient(inter, amount[i]);
+                    test.Ingredients.Add(mo);
+                }
+                else
+                {
+                    test.Ingredients[i].Ingredient.Name = ingredients[i];
+                    test.Ingredients[i].Ingredient.Unit = unit[i];
+                    test.Ingredients[i].amount = amount[i];
                 }
             }
-            return View(rekt);
+            test.Time = time;
+            test.Description = description;
+            for (int i = 0; i < guide.Count; i++)
+            {
+                if (i >= test.Guide.Count)
+                {
+                    test.Guide.Add(guide[i]);
+                }
+                else
+                {
+                    test.Guide[i] = guide[i];
+                }
+            }
+            repo.CookBook[id] = test;
+            return View("Myrecipes", u);
         }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

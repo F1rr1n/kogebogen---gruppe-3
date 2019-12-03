@@ -18,11 +18,11 @@
     <h2>@r.Name</h2>
     <img src="@r.ImageUrl" />
     <form class="myRecipes" method="post" asp-controller="Home" asp-action="RemoveRecipe">
-        <input type="hidden" name="r" value="@r.Name" />
+        <input type="hidden" name="r" value="@r.ID" />
         <button type="submit" class="fas fa-minus"></button>
     </form>
-    <form class="myRecipes" method="post" asp-controller="Home" asp-action="EditRecipe">
-        <input type="hidden" name="r" value="@r.Name" />
+    <form class="myRecipes" method="post" asp-controller="Home" asp-action="EditRecipeOpen">
+        <input type="hidden" name="r" value="@r.ID" />
         <button type="submit">Ret opskrift</button>
     </form>
 </div>
