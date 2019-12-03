@@ -1,6 +1,6 @@
-﻿function micro()
+﻿function micro(event)
 {
-
+    event.preventDefault();
     let k = document.createElement("p");
     var output = '<input type="text" name="ingredients" required/>' + '<input type="number" value="amount" name="amount" required/>' +
         '<select name="unit" required>' +
@@ -14,20 +14,23 @@
     document.getElementById("ingredients").appendChild(k);
 }
 
-function test()
+function test(event)
 {
+    event.preventDefault();
     let j = document.createElement("li");
     let k = '<input type="text" name="guide" required/>';
     j.innerHTML += k;
     document.getElementById("description_steps").appendChild(j);
 }
-function remove() {
+function remove(event) {
+    event.preventDefault();
     var r = document.getElementById("ingredients").lastElementChild;
     r.parentNode.removeChild(r);
 }
 
 
-function fjerntrin() {
+function fjerntrin(event) {
+    event.preventDefault();
     var f = document.getElementById("description_steps").lastElementChild;
     f.parentNode.removeChild(f)
 }
