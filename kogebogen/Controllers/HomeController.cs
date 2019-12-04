@@ -25,6 +25,7 @@ namespace kogebogen.Controllers
 
         public IActionResult Index()
         {
+            repo.CookBook.Add(new Recipe("Pasta al dente"));
             u.Own.Add(repo.CookBook[3]);
             u.Own[0].Guide.Add("test1");
             u.Own[0].Guide.Add("test2");
@@ -129,6 +130,30 @@ namespace kogebogen.Controllers
             return View("Myrecipes", u);
         }
 
+        [HttpPost]
+        public IActionResult Search(string searchValue)
+        {
+            RecipeHolder test = new RecipeHolder();
+            var meh = repo.CookBook.Where(x => x.Name.Contains(searchValue));
+            foreach(var v in meh)
+            {
+                test.recipes.Add(v);
+                test.recipeCounter++;
+            }
+            // var test2 = repo.CookBook.Where(x => x.Ingredients[].Ingredient.Name.Contains(searchValue));
+            foreach (Recipe r in repo.CookBook)
+            {
+                for(int i = 0; i <r.Ingredients.Count; i++)
+                {
+                    if(r.Ingredients[i].Ingredient.Name.Contains(searchValue))
+                    {
+                        test.recipes.Add(r);
+                    }
+                }
+            }
+
+            return View(test);
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
