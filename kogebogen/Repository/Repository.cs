@@ -9,6 +9,7 @@ namespace kogebogen.Repository
     public class Repositories
     {
         public List<Recipe> CookBook = new List<Recipe>();
+        public List<Ingredient> IngredientList = new List<Ingredient>();
         
         public Repositories()
         {
@@ -21,6 +22,14 @@ namespace kogebogen.Repository
             Ingredient Chilli = new Ingredient("Chili", "spsk");
             Ingredient Cumin = new Ingredient("Spidskommen", "tsk");
             Ingredient Coriander = new Ingredient("Koriander", "tsk");
+            IngredientList.Add(Salt);
+            IngredientList.Add(Pepper);
+            IngredientList.Add(Oregano);
+            IngredientList.Add(Sugar);
+            IngredientList.Add(Basil);
+            IngredientList.Add(Chilli);
+            IngredientList.Add(Cumin);
+            IngredientList.Add(Coriander);
 
             //Ekstra flavour 
             Ingredient Vegatablestock = new Ingredient("Grøntsagsbouillon", "dl");
@@ -28,6 +37,11 @@ namespace kogebogen.Repository
             Ingredient Calffund = new Ingredient("Kalvefond", "spsk");
             Ingredient CurryPaste = new Ingredient("Karrypasta", "spsk");
             Ingredient Pesto = new Ingredient("Pesto", "tsk");
+            IngredientList.Add(Vegatablestock);
+            IngredientList.Add(Beefbroth);
+            IngredientList.Add(Calffund);
+            IngredientList.Add(CurryPaste);
+            IngredientList.Add(Pesto);
 
             //Dry ingredients
             Ingredient Breadcrumbs = new Ingredient("Rasp", "g");
@@ -35,8 +49,17 @@ namespace kogebogen.Repository
             Ingredient EggNoodles = new Ingredient("Nudler", "pk");
             Ingredient Rice = new Ingredient("Ris", "g");
             Ingredient Pasta = new Ingredient("Pasta", "g");
+            Ingredient LasagnaSheets = new Ingredient("Lasagneplader", "pk");
             Ingredient Spaghetti = new Ingredient("Spaghetti", "g");
             Ingredient TacoShells = new Ingredient("Taco skaller", null);
+            IngredientList.Add(Breadcrumbs);
+            IngredientList.Add(Flour);
+            IngredientList.Add(EggNoodles);
+            IngredientList.Add(Rice);
+            IngredientList.Add(Pasta);
+            IngredientList.Add(LasagnaSheets);
+            IngredientList.Add(Spaghetti);
+            IngredientList.Add(TacoShells);
 
             //Vegtables
             Ingredient Onion = new Ingredient("Løg", null);
@@ -50,12 +73,27 @@ namespace kogebogen.Repository
             Ingredient MixedVegtables = new Ingredient("Blandede grøntsager", "ps");
             Ingredient Pees = new Ingredient("Ærter", "g");
             Ingredient KidneyBeans = new Ingredient("Kidney bønner", "g");
+            IngredientList.Add(Onion);
+            IngredientList.Add(Garlic);
+            IngredientList.Add(Chives);
+            IngredientList.Add(Beetroot);
+            IngredientList.Add(Potato);
+            IngredientList.Add(Carrot);
+            IngredientList.Add(Broccoli);
+            IngredientList.Add(HaricotsVerts);
+            IngredientList.Add(MixedVegtables);
+            IngredientList.Add(Pees);
+            IngredientList.Add(KidneyBeans);
 
             //Meat 
             Ingredient Beef = new Ingredient("Oksekød", "g");
             Ingredient Bacon = new Ingredient("Bacon", "g");
             Ingredient ChickenBreasts = new Ingredient("Kyllingebryst", null);
             Ingredient Veal = new Ingredient("Kalvekød", "g");
+            IngredientList.Add(Beef);
+            IngredientList.Add(Bacon);
+            IngredientList.Add(ChickenBreasts);
+            IngredientList.Add(Veal);
 
             //Liquid ingredients dip
             Ingredient TomatoSauce = new Ingredient("Tomatsauce", "dåse");
@@ -67,26 +105,49 @@ namespace kogebogen.Repository
             Ingredient Honey = new Ingredient("Flydende honning", "spsk");
             Ingredient Guacamole = new Ingredient("Guacamole", null);
             Ingredient MornaySauce = new Ingredient("Mornay sauce", "pap-bøtte");
+            IngredientList.Add(TomatoSauce);
+            IngredientList.Add(CoconutMilk);
+            IngredientList.Add(Milk);
+            IngredientList.Add(Cream);
+            IngredientList.Add(Mozarella);
+            IngredientList.Add(Butter);
+            IngredientList.Add(Honey);
+            IngredientList.Add(Guacamole);
+            IngredientList.Add(MornaySauce);
 
             Ingredient Pilsner = new Ingredient("Øl - pilsner", null);
+            IngredientList.Add(Pilsner);
 
             //Recipes
             Recipe Lasagna = new Recipe();
             Lasagna.Ingredients.Add(new ModelIngredient(Onion, 1));
             Lasagna.Ingredients.Add(new ModelIngredient(Garlic, 3));
             Lasagna.Ingredients.Add(new ModelIngredient(Beef, 500));
-            Lasagna.Ingredients.Add(new ModelIngredient(TomatoSauce, 1));
-            Lasagna.Ingredients.Add(new ModelIngredient(MornaySauce, 1));
             Lasagna.Ingredients.Add(new ModelIngredient(Salt, 3));
             Lasagna.Ingredients.Add(new ModelIngredient(Pepper, 1));
             Lasagna.Ingredients.Add(new ModelIngredient(Oregano, 2));
+            Lasagna.Ingredients.Add(new ModelIngredient(TomatoSauce, 1));
+            Lasagna.Ingredients.Add(new ModelIngredient(MornaySauce, 1));
+            Lasagna.Ingredients.Add(new ModelIngredient(LasagnaSheets, 2));
+            Lasagna.Ingredients.Add(new ModelIngredient(Mozarella, 150));
             Lasagna.Name = "Lasagne";
-            Lasagna.TotalPrice = 40;
-            Lasagna.Time = 40;
+            Lasagna.TotalPrice = 216;
+            Lasagna.Description = "Hurtig lasagne. Serverings forslag: Server med grøn salat og groft brød";
+            Lasagna.Guide.Add(new string("Tænd ovnen på 180 grader almindelig ovn"));
+            Lasagna.Guide.Add(new string("Hak løg og hvidløg fint"));
+            Lasagna.Guide.Add(new string("Svits løg og hvidløg i noget olie i en gryde, til de er blanke"));
+            Lasagna.Guide.Add(new string("Tilsæt oksekød og steg indtil det bliver brunt"));
+            Lasagna.Guide.Add(new string("Tilsæt salt, peber, oregano og tomatsauce og lad det simre"));
+            Lasagna.Guide.Add(new string("I et fad lægges der lagvis lasagne plader, dernæst kødsovs og så et lag mornay sauce"));
+            Lasagna.Guide.Add(new string("Lagene sluttes af med mornay sauce og et tykt lag mozarella"));
+            Lasagna.Guide.Add(new string("Lasagnen bages i den forvarmet ovn, i ca 30 min, indtil overfladen er gylden"));
+            
+            Lasagna.Time = 45;
+            Lasagna.ImageUrl = "lasagna.jpeg";
             Lasagna.ID = 0;
             CookBook.Add(Lasagna);
 
-            Recipe TomatoSoup = new Recipe();
+        Recipe TomatoSoup = new Recipe();
             TomatoSoup.Ingredients.Add(new ModelIngredient(Butter, 25));
             TomatoSoup.Ingredients.Add(new ModelIngredient(Onion, 1));
             TomatoSoup.Ingredients.Add(new ModelIngredient(Garlic, 1));
