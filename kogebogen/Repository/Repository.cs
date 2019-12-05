@@ -142,7 +142,7 @@ namespace kogebogen.Repository
             Lasagna.Guide.Add(new string("Lagene sluttes af med mornay sauce og et tykt lag mozarella"));
             Lasagna.Guide.Add(new string("Lasagnen bages i den forvarmet ovn, i ca 30 min, indtil overfladen er gylden"));
             Lasagna.Time = 45;
-            Lasagna.ImageUrl = "lasagna.jpeg";
+            Lasagna.ImageUrl = "lasagna.jpg";
             Lasagna.ID = 0;
             CookBook.Add(Lasagna);
 

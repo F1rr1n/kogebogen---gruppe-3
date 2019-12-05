@@ -16,7 +16,7 @@
     {
 <div class="flex-container" style="display:flex">
     <h2>@r.Name</h2>
-    <img src="@r.ImageUrl" />
+    <img src="~/img/@r.ImageUrl" />
     <form class="myRecipes" method="post" asp-controller="Home" asp-action="RemoveRecipe">
         <input type="hidden" name="r" value="@r.ID" />
         <button type="submit" class="fas fa-minus"></button>
