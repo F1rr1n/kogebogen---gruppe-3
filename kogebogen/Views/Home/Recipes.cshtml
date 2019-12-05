@@ -42,7 +42,14 @@
             </form>
             <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
 
-            <button class="fas fa-heart addToMy"></button>
+            <form asp-action="Addfav" asp-controller="Home" method="post">
+                <input type="hidden" name="r" value="@r.ID" />
+                <button type="submit" class="fas fa-heart"></button>
+            </form>
+            <form asp-action="Addtofoodplan" asp-controller="Home" method="post">
+                <input type="hidden" name="r" value="@r.ID" />
+                <button type="submit" class="fas fa-calendar-alt"></button>
+            </form>
 
         </div>
         <p class="totalPrice"> @r.TotalPrice</p>

@@ -521,3 +521,4 @@ D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\net
 D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.csproj.CopyComplete
 D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.dll
 D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.pdb
+D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\TheRecipe.cshtml.g.cs
