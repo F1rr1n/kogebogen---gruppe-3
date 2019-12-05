@@ -156,6 +156,13 @@ namespace kogebogen.Controllers
         }
 
         [HttpPost]
+        public IActionResult TheRecipe(int OpskriftID)
+        {
+            Recipe rekt = repo.CookBook.Find(x => x.ID == OpskriftID);
+            return View(rekt);
+        }
+
+        [HttpPost]
         public IActionResult Search(string searchValue)
         {
             RecipeHolder test = new RecipeHolder();
