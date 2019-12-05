@@ -78,7 +78,32 @@ namespace kogebogen.Controllers
             return View("Index");
 
         }
+        public IActionResult Addfav(int r)
+        {
 
+            Recipe test = repo.CookBook.Find(x => x.ID == r);
+            if (!u.Favorites.Contains(test))
+            {
+                u.Favorites.Add(test);
+
+            }
+
+            return View("Addfav", u);
+        }
+
+        [HttpPost]
+        public IActionResult Addtofoodplan(int r)
+        {
+
+            Recipe test = repo.CookBook.Find(x => x.ID == r);
+            if (u.Madplan.Count <= 6)
+            {
+                u.Madplan.Add(test);
+
+            }
+
+            return View("Addtofoodplan", u);
+        }
         [HttpPost]
         public IActionResult RemoveRecipe(int r)
         {
