@@ -33,15 +33,20 @@
 @foreach (Recipe r in Model.CookBook)
 {
     <div class="recipes">
-        <div class="flex-container" style="display:flex">
-            <h2>@r.Name</h2>
-            <img src="@r.ImageUrl" />
-
+        <hr width="50%" color="black" />
+        <div class="flex-container" style="display:flex; justify-content:space-between;">
+            <!-- Klik ind på den enkelte opskrift -->
+            <form asp-controller="Home" method="post" asp-action="TheRecipe">
+                <input type="hidden" name="OpskriftID" value="@r.ID" />
+                <h2 style="width:50vw"><button type="submit">@r.Name</button></h2>
+            </form>
+            <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
 
             <button class="fas fa-heart addToMy"></button>
+
         </div>
-            <input type="text" class="totalPrice" name="totalPrice" value="@r.TotalPrice" />
-            <input type="text" class="totalTime" name="totalTime" value="@r.Time" />
+        <p class="totalPrice"> @r.TotalPrice</p>
+        <p class="totalTime"> @r.Time</p>
     </div>
 }
 

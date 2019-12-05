@@ -37,8 +37,8 @@ for (var i = 0; i < ranges.length; i++) {
         var priceRangeInteger = parseInt(ranges[0].value, 10);
         var timeRangeInteger = parseInt(ranges[1].value, 10);
         for (var x = 0; x < recipes.length; x++) {
-            var pricesInteger = parseInt(prices[x].value, 10);
-            var timesInteger = parseInt(times[x].value, 10);
+            var pricesInteger = parseInt(prices[x].innerHTML, 10);
+            var timesInteger = parseInt(times[x].innerHTML, 10);
             if (pricesInteger > priceRangeInteger || timesInteger > timeRangeInteger) {
                 recipes[x].style.display = "none";
             } else {
