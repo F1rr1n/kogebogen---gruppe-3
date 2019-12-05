@@ -11,6 +11,7 @@ namespace kogebogen.Models
         public string Password { get; set; }
         public List<Recipe> Favorites = new List<Recipe>();
         public List<Recipe> Own = new List<Recipe>();
+        public List<Recipe> Madplan = new List<Recipe>();
 
     }
 }

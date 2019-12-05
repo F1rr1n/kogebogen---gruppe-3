@@ -8042,23 +8042,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Peter\\.nuget\\packages\\": {},
+    "C:\\Users\\sebmo\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
+      "projectUniqueName": "D:\\Brugere\\Multimedie Design\\github\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj",
       "projectName": "kogebogen",
-      "projectPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\kogebogen.csproj",
-      "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Peter\\Documents\\Visual Studio 2019\\Kogebogen projekt\\kogebogen\\obj\\",
+      "projectPath": "D:\\Brugere\\Multimedie Design\\github\\kogebogen---gruppe-3\\kogebogen\\kogebogen.csproj",
+      "packagesPath": "C:\\Users\\sebmo\\.nuget\\packages\\",
+      "outputPath": "D:\\Brugere\\Multimedie Design\\github\\kogebogen---gruppe-3\\kogebogen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sebmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
