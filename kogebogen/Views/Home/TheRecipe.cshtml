@@ -1,0 +1,43 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "TheRecipe";
+}
+<!-- Fontawesome - icons -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- Opskriftens titel og beskrivelse -->
+<h1>@Model.Name</h1>
+<h2>Beskrivelse</h2>
+<p>@Model.Description</p>
+
+<!-- Div-container der indeholder ingredienserne, pris, tid og billede -->
+<div class="ingredients-container" style="display:flex;justify-content:space-between;">
+    <div class="ingredients">
+        <h2>Ingredienser</h2>
+        <table>
+            <!-- Loop igennem ingredienserne, da det er en liste -->
+            @foreach (ModelIngredient i in Model.Ingredients)
+            {
+
+                <tr>
+                    <td>@i.amount</td>
+                    <td>@i.Ingredient.Unit</td>
+                    <td>@i.Ingredient.Name</td>
+                </tr>
+            }
+        </table>
+        <p>Pris i alt: @Model.TotalPrice kr</p>
+        <p><i class="fas fa-clock"></i> Tid i alt: @Model.Time min</p>
+
+    </div>
+    <img src="~/img/@Model.ImageUrl" alt="@Model.Name" style="max-width: 40vw; max-height:35vh;" />
+</div>
+
+<!-- Vejledningen til opskrifterne i et loop, da det er en liste -->
+<h2>Vejledning</h2>
+<ol>
+    @foreach (string guide in Model.Guide)
+    {
+        <li>@guide</li>
+    }
+</ol>

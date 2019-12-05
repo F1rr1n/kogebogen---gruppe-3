@@ -1,0 +1,22 @@
+﻿@using kogebogen.Repository;
+@model User
+@{
+    ViewData["Title"] = "Addfav";
+}
+
+<h1>Addfav</h1>
+
+
+
+@foreach (Recipe r in Model.Favorites)
+{
+
+    <div class="flex-container" style="display:flex">
+        <h2>@r.Name</h2>
+        <img src="@r.ImageUrl" />
+        
+
+    </div>
+
+
+}

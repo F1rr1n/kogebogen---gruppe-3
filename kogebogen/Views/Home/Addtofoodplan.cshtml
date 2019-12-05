@@ -1,0 +1,38 @@
+﻿@using kogebogen.Repository;
+@using kogebogen.Models;
+@model User
+@{
+    ViewData["Title"] = "Addfav";
+}
+
+<h1>Addfav</h1>
+
+
+<table>
+    <tr>
+        <th>Mandag</th>
+        <th>Tirsdag</th>
+        <th>Onsdag</th>
+        <th>Torsdag</th>
+        <th>Fredag</th>
+        <th>Lørdag</th>
+        <th>Søndag</th>
+    </tr>
+    <tr>
+
+        @foreach (Recipe r in Model.Madplan)
+
+        {
+            <td>
+                <h4>@r.Name</h4>
+                <img src="@r.ImageUrl"/>
+                <p>@r.TotalPrice</p>
+            </td>
+         
+
+        }
+       
+            @Model.Madplan
+    </tr>
+    </table>
+        

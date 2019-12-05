@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
@@ -8,14 +10,18 @@
     <form method="post" asp-controller="Home" asp-action="AddRecipe">
         <button type="submit">Tilføj opskrift</button>
     </form>
-    <form  asp-controller="Home" asp-action="Recipes" method="post">
+    <form asp-controller="Home" asp-action="Recipes" method="post">
         <button type="submit"> Opskrifterne </button>
     </form>
-    <form  asp-controller="Home" method="post" asp-action="Myrecipes">
+    <form asp-controller="Home" method="post" asp-action="Myrecipes">
         <button type="submit">Min side</button>
     </form>
-    <form asp-controller="Home" asp-action="Search" method="post">
-        <input type="text" name="searchValue" /> <br />
-        <button type="submit">Søg</button>
+    <form asp-controller="Home" method="post" asp-action="Addtofoodplan">
+        <button type="submit">Mad plan</button>
+    </form>
+
+    <form asp-action="Search" asp-controller="Home" method="post">
+        <input type="text" name="searchValue" />
+        <button type="submit" class="fas fa-search">Søg</button>
     </form>
 </div>

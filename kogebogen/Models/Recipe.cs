@@ -15,13 +15,11 @@ namespace kogebogen.Models
         public int Time { get; set; }
         public string ImageUrl { get; set; }
         public int ID { get; set; }
-        public Recipe()
-        {
 
-        }
-        public Recipe(string name)
-        {
-            this.Name = name;
+        public Recipe() { }
+
+        public Recipe(string Name) {
+            this.Name = Name;
         }
     }
 }
