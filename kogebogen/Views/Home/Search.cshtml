@@ -1,0 +1,23 @@
+﻿@model RecipeHolder
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+
+<p>Title</p>
+@for (int i = 0; i < Model.recipeCounter; i++)
+{
+    @Model.recipes[i].Name
+    <br />
+    @i
+}
+
+<p>Disse opskrifter passer til hvad du søgte efter</p>
+@for (int i = Model.recipeCounter; i < Model.recipes.Count; i++)
+{
+    @Model.recipes[i].Name
+    <br />
+    @i
+}
