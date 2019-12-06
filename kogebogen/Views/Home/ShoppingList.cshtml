@@ -1,0 +1,15 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "ShoppingList";
+}
+
+<h1>ShoppingList</h1>
+
+@foreach (ModelIngredient i in Model.Ingredients)
+{
+    <tr>
+        <td>@i.amount</td>
+        <td>@i.Ingredient.Unit</td>
+        <td>@i.Ingredient.Name</td>
+    </tr>
+}

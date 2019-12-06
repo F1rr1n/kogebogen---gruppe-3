@@ -1,11 +1,16 @@
-﻿@using kogebogen.Repository;
-@using kogebogen.Models;
+﻿@using kogebogen.Models;
 @model User
 @{
     ViewData["Title"] = "Addfav";
 }
+<h1>Min madplan</h1>
 
-<h1>Addfav</h1>
+@*<table>
+        <tr>
+            <th>Mandag</th>
+            <td></td>
+        </tr>
+    </table>*@
 
 
 <table>
@@ -25,14 +30,21 @@
         {
             <td>
                 <h4>@r.Name</h4>
-                <img src="~/img/@r.ImageUrl"/>
-                <p>@r.TotalPrice</p>
-            </td>
-         
+                <img src="~/img/@r.ImageUrl" />
+                <p class="price">@r.TotalPrice</p>
 
+                <form class="RemoveFoodplan" method="post" asp-controller="Home" asp-action="RemoveFoodplan">
+                    <input type="hidden" name="r" value="@r.ID" />
+                    <button type="submit" class="fas fa-minus"></button>
+                </form>
+
+                <form class="AddToShoppingList" method="post" asp-controller="Home" asp-action="ShoppingList">
+                    <input type="hidden" name="r" value="@r.ID" />
+                    <button type="submit" class="fas fa-circle">Tilføj til shopping liste</button>
+                </form>
+            </td>
         }
-       
-            @Model.Madplan
     </tr>
-    </table>
-        
+    <p id="totalPrice"></p>
+</table>
+<script src="~/js/AddToFoodPlan.js"></script>
