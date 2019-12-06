@@ -1,0 +1,135 @@
+﻿body {
+    background-image: url(../img/Layer22.png);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    display: none;
+}
+
+.titleContainer {
+    padding: 40vh 0;
+}
+
+h1 {
+    text-align: center;
+    margin: auto auto;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 10vh;
+    background-color: #2D4D24;
+    position: absolute;
+    bottom: 0;
+    padding: 3%;
+}
+
+button, a {
+    font-size: 2.5em;
+}
+
+
+#hamburger {
+    bottom: 4vh;
+    width: 22vw;
+    height: 12vh;
+    position: relative;
+    background-color: #de6287;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#hamburger span {
+    height: 6vh;
+    margin: 3vh 0;
+}
+
+.searchForm {
+    display: none;
+    width: 50vw;
+    position: absolute;
+    top: 52vh;
+    margin: 0 25vw;
+}
+
+.searchForm button {
+    width: 100%;
+    text-align: center;
+}
+
+#searchField {
+    width: 100%;
+    margin-bottom: 1vh;
+}
+
+.profileModal {
+    left: -70vw;
+    position: absolute;
+    top: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: #2D4D24;
+    animation-duration: 1s;
+}
+
+@keyframes in {
+    0% {
+        left: -70vw;
+    }
+
+    100% {
+        left: 0vw;
+    }
+}
+
+@keyframes out {
+    0% {
+        left: 0vw;
+    }
+
+    100% {
+        left: -70vw;
+    }
+}
+
+li {
+    border-bottom: 2px solid #6ca15d;
+    width: 90%;
+    margin: 0 5%;
+}
+
+.profileModal button, .profileModal a {
+    font-size: 1.4em;
+    width: 90%;
+    margin: 0 5%;
+    padding: 5% 0;
+    text-align: left;
+}
+
+.profileModal img {
+    width: 100%;
+    height: 25vh;
+}
+
+.profileModal h2 {
+    position: absolute;
+    top: 17vh;
+    color: #2D4D24;
+    margin: 0 5%;
+}
+
+span {
+    margin-right: 5%;
+}
+
+#back {
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    font-size: 2.5em;
+}

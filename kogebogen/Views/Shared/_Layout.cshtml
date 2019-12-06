@@ -39,14 +39,36 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - kogebogen - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    <!-- Modalbox med profilen -->
+    <div class="profileModal" id="theProfile">
+        <img src="~/img/chilli.jpg" />
+        <h2 class="profilName">Lasse</h2>
+        <ol>
+            <li>
+                <form asp-controller="Home" method="post" asp-action="Myrecipes">
+                    <button type="submit">
+                        <span class="fas fa-address-book"></span>
+                        Mine opskrifter
+                    </button>
+                </form>
+            </li>
+            <li>
+                <a asp-controller="Home" asp-action="Addfav"><span class="fas fa-heart"></span>Mine favoritter</a>
+            </li>
+            <li>
+                <a asp-controller="Home" asp-action="AddRecipe"><span class="fas fa-plus"></span>Tilføj ny opskrift</a>
+            </li>
+            <li>
+                <a href="#"><span class="fas fa-unlock-alt"></span>Log ud</a>
+            </li>
+        </ol>
+        <button class="fas fa-arrow-left" id="back"></button>
+    </div>
+
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>*@
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/lib/pure/swiped-events.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

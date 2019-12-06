@@ -3,49 +3,27 @@
 }
 <link rel="stylesheet" type="text/css" href="~/css/front.css">
 
-<h1>kogebogen</h1>
+
+<div class="titleContainer">
+    <h1>kogebogen</h1>
+</div>
+
+<!-- Modalbox for søgning -->
+<form asp-action="Search" asp-controller="Home" method="post" class="searchForm" id="searchModal">
+    <input type="text" name="searchValue" id="searchField" /> <br />
+    <button type="submit" class="fas fa-search"></button>
+</form>
 
 <nav>
-    <button class="fas fa-user-alt  openProfil"></button>
-    <div class="profileModal">
-        <img src="~/img/" />
-        <p class="profilName"></p>
-        <ol>
-            <li>
-                <i class="fas fa-"></i>
-                <a href="#">Mine opskrifter</a>
-            </li>
-            <li>
-                <a href="#">content</a>
-            </li>
-            <li>
-                <a href="#">content</a>
-            </li>
-            <li>
-                <a href="#">content</a>
-            </li>
-        </ol>
-    </div>
+    <button class="fas fa-user-alt" id="openProfile"></button>
+    <a class="fas fa-heart" asp-controller="Home" asp-action="Addfav"></a>
+    <a asp-controller="Home" asp-action="Menu" id="hamburger">
+        <span class="fas fa-bars"></span>
+    </a>
+    <form asp-controller="Home" method="post" asp-action="Addtofoodplan">
+        <button type="submit" class="fas fa-calendar-alt"></button>
+    </form>
+    <button class="fas fa-search" id="searchButton"></button>
 </nav>
 
-<i class="fas fa-address-book"></i>
-<img src="~/img/address-book-solid.svg" alt="Alternate Text" />
-
-
-<form method="post" asp-controller="Home" asp-action="AddRecipe">
-    <button type="submit">Tilføj opskrift</button>
-</form>
-<form asp-controller="Home" asp-action="Recipes" method="post">
-    <button type="submit"> Opskrifterne </button>
-</form>
-<form asp-controller="Home" method="post" asp-action="Myrecipes">
-    <button type="submit">Min side</button>
-</form>
-<form asp-controller="Home" method="post" asp-action="Addtofoodplan">
-    <button type="submit">Mad plan</button>
-</form>
-
-<form asp-action="Search" asp-controller="Home" method="post">
-    <input type="text" name="searchValue" />
-    <button type="submit" class="fas fa-search">Søg</button>
-</form>
+<script src="~/js/front.js"></script>

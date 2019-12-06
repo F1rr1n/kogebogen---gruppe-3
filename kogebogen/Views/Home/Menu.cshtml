@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Menu";
+}
+<link href="~/css/menu.css" rel="stylesheet" />
+
+<!-- Modalbox for søgning -->
+<form asp-action="Search" asp-controller="Home" method="post" class="searchForm" id="searchModal">
+    <input type="text" name="searchValue" id="searchField" /> <br />
+    <button type="submit" class="fas fa-search"></button>
+</form>
+
+
+<div class="grid-container">
+    <a asp-controller="Home" asp-action="Recipes" class="opskrifter">
+        <span class="fas fa-address-book" id="filled"></span>
+        <p>Opskrifter</p>
+    </a>
+    <a asp-controller="Home" asp-action="Myrecipes" class="mineOpskrifter">
+        <span class="fas fa-address-book"></span>
+        <p>Mine opskrifter</p>
+    </a>
+    <a asp-controller="Home" asp-action="AddRecipe" class="tilføj">
+        <span class="fas fa-plus"></span>
+        <p>Tilføj opskrift</p>
+    </a>
+    <a asp-controller="Home" asp-action="Addfav" class="favorit">
+        <span class="fas fa-heart"></span>
+        <p>Favoritter</p>
+    </a>
+    <button id="searchButton">
+        <span class="fas fa-search"></span>
+        <p>Søg</p>
+    </button>
+    <button id="openProfile">
+        <span class="fas fa-user-alt"></span>
+        <p>Min profil</p>
+    </button>
+    <a asp-controller="Home" asp-action="Addtofoodplan" class="madplan">
+        <span class="fas fa-calendar-alt"></span>
+        <p>Min madplan</p>
+    </a>
+    <a href="#" class="indstillinger">
+        <span class="fas fa-cog"></span>
+        <p>Indstillinger</p>
+    </a>
+</div>
+
+
+
+<script src="~/js/front.js"></script>

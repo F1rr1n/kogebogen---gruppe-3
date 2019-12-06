@@ -1,0 +1,90 @@
+﻿.navbar {
+    display: none;
+}
+
+body {
+    background-color: #2D4D24;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'icon1 icon2 icon3' 'icon4 icon5 icon6' 'icon7 icon8 .';
+    grid-template-columns: repeat(3, 26.6vw);
+    grid-row-gap: 5vh;
+    grid-column-gap: 5vw;
+    margin: 19vh 5vw;
+    width: 90vw;
+}
+
+#filled {
+    color: white;
+    background: linear-gradient(90deg, #ffffff 100%, #ffffff00 28%);
+    background-size: 8vw 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+button span, a span {
+    border-radius: 50%;
+    border: 2px solid #6ca15d;
+    padding: 2%;
+    font-size: 2.9em;
+    padding: 20%;
+}
+
+button p, a p {
+    font-size: 0.9em;
+}
+
+.opskrifter {
+    grid-area: icon1;
+}
+
+.mineOpskrifter {
+    grid-area: icon2;
+}
+
+.tilføj {
+    grid-area: icon3;
+}
+
+.favorit {
+    grid-area: icon4;
+}
+
+#searchButton {
+    grid-area: icon5;
+}
+
+#openProfile {
+    grid-area: icon6;
+}
+
+.madplan {
+    grid-area: icon7;
+}
+
+.indstillinger {
+    grid-area: icon8;
+}
+
+.searchForm {
+    display: none;
+    width: 70vw;
+    position: absolute;
+    top: 7vh;
+    margin: 0 15vw;
+}
+
+    .searchForm button {
+        width: 100%;
+        text-align: center;
+        font-size: 2em;
+    }
+
+#searchField {
+    width: 100%;
+    margin-bottom: 1vh;
+    font-size: 1.5em;
+}

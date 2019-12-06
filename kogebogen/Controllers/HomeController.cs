@@ -33,6 +33,11 @@ namespace kogebogen.Controllers
             return View();
         }
 
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -104,6 +109,15 @@ namespace kogebogen.Controllers
 
             return View("Addtofoodplan", u);
         }
+
+        //[HttpPost]
+        //public IActionResult RemoveFoodplan(int r)
+        //{
+        //    Recipe test = repo.CookBook.Find(x => x.ID == r);
+        //    u.Madplan.Remove(test);
+        //    return View("Addtofoodplan", u);
+        //}
+
         [HttpPost]
         public IActionResult RemoveRecipe(int r)
         {
