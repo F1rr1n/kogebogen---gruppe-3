@@ -11,28 +11,12 @@ namespace kogebogen.Models
             new Days("Onsdag"), new Days("Torsdag"),
             new Days("Fredag"), new Days("Lørdag"), new Days("Søndag") };
         public Recipe rHolder { get; set; }
-        private int price;
-        public int totalPrice
+        public int price { get; set; }
+
+        public int Price(int a)
         {
-            get
-            {
-                return totalPrice;
-            }
-            set
-            {
-                foreach (Days d in days)
-                {
-                    if (d.recipe.TotalPrice != 0)
-                    {
-                        price += d.recipe.TotalPrice;
-                    }
-                    else
-                    {
-                        // DO NOTHING
-                    }
-                }
-                price = value;
-            }
+            price += a;
+            return price;
         }
         
     }

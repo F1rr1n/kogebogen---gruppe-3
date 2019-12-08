@@ -11,7 +11,7 @@
     <br />
     @if (Model.madplan.days[i].recipe != null)
     {
-        @Model.madplan.days[i].recipe.Name @Model.madplan.days[i].recipe.TotalPrice<br />
+        @Model.madplan.days[i].recipe.Name<br />
 
     }
     else
@@ -20,5 +20,5 @@
         <br />
     }
 }
-
-@Model.madplan.totalPrice
+<p>Samlet pris for mad:<br /></p>
+@Model.madplan.price kr.

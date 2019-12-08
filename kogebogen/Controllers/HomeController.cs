@@ -97,7 +97,6 @@ namespace kogebogen.Controllers
 
             Recipe test = repo.CookBook.Find(x => x.ID == r);
             u.madplan.rHolder = test;
-
             return View("Addtofoodplan", u);
         }
         [HttpPost]
@@ -105,7 +104,7 @@ namespace kogebogen.Controllers
         {
             Recipe r = repo.CookBook.Find(x => x.ID == rec);
             u.madplan.days.Where(x => x.Name == day).Single().recipe = r;
-
+            u.madplan.Price(r.TotalPrice);
             return View("ShowPlan",u);
         }
         [HttpPost]
