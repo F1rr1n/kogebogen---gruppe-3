@@ -521,3 +521,10 @@ D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\net
 D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.csproj.CopyComplete
 D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.dll
 D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.pdb
+D:\Brugere\Multimedie Design\github\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\TheRecipe.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Addfav.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Addtofoodplan.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Search.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\ShoppingList.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\TheRecipe.cshtml.g.cs
+C:\Users\Peter\Documents\Visual Studio 2019\Kogebogen projekt\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\ShowPlan.cshtml.g.cs

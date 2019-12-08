@@ -1,0 +1,24 @@
+﻿@model User
+@{
+    ViewData["Title"] = "ShowPlan";
+}
+
+<h1>Madplan for ugen</h1>
+
+@for (int i = 0; i < Model.madplan.days.Length; i++)
+{
+    @Model.madplan.days[i].Name
+    <br />
+    @if (Model.madplan.days[i].recipe != null)
+    {
+        @Model.madplan.days[i].recipe.Name @Model.madplan.days[i].recipe.TotalPrice<br />
+
+    }
+    else
+    {
+        // Do nothing
+        <br />
+    }
+}
+
+@Model.madplan.totalPrice

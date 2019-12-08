@@ -1,8 +1,6 @@
 ﻿@model User
 @using kogebogen.Repository;
 @using kogebogen.Models;
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 @{
     ViewData["Title"] = "MyRecipes";
@@ -16,7 +14,7 @@
     {
 <div class="flex-container" style="display:flex">
     <h2>@r.Name</h2>
-    <img src="@r.ImageUrl" />
+    <img src="~/img/@r.ImageUrl" />
     <form class="myRecipes" method="post" asp-controller="Home" asp-action="RemoveRecipe">
         <input type="hidden" name="r" value="@r.ID" />
         <button type="submit" class="fas fa-minus"></button>
@@ -25,10 +23,8 @@
         <input type="hidden" name="r" value="@r.ID" />
         <button type="submit">Ret opskrift</button>
     </form>
-    <form asp-action="Addtofoodplan" asp-controller="Home" method="post">
-        <input type="hidden" name="r" value="@r.ID" />
-        <button type="submit" class="fas fa-calendar-alt"></button>
-    </form>
+    
+    
 </div>
 }
 

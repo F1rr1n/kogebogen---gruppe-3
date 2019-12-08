@@ -1,38 +1,31 @@
-﻿@using kogebogen.Repository;
-@using kogebogen.Models;
+﻿@using kogebogen.Models;
 @model User
 @{
     ViewData["Title"] = "Addfav";
 }
+<h1>Min madplan</h1>
 
-<h1>Addfav</h1>
+@*<table>
+        <tr>
+            <th>Mandag</th>
+            <td></td>
+        </tr>
+    </table>*@
 
 
-<table>
-    <tr>
-        <th>Mandag</th>
-        <th>Tirsdag</th>
-        <th>Onsdag</th>
-        <th>Torsdag</th>
-        <th>Fredag</th>
-        <th>Lørdag</th>
-        <th>Søndag</th>
-    </tr>
-    <tr>
+@foreach (Days day in Model.madplan.days)
+{
+    @day.Name <br />
+    @if (day.recipe == null)
+    {
+        <form method="post" asp-controller="Home" asp-action="AddToPlan">
+            <input type="hidden" name="day" value="@day.Name" />
+            <input type="hidden" name="rec" value="@Model.madplan.rHolder.ID" />
+            <button type="submit">Tilføj</button>
+        </form>
+    }
+    <br />
+}
 
-        @foreach (Recipe r in Model.Madplan)
-
-        {
-            <td>
-                <h4>@r.Name</h4>
-                <img src="@r.ImageUrl"/>
-                <p>@r.TotalPrice</p>
-            </td>
-         
-
-        }
-       
-            @Model.Madplan
-    </tr>
-    </table>
-        
+<p id="totalPrice"></p>
+<script src="~/js/AddToFoodPlan.js"></script>

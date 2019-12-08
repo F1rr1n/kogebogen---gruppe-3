@@ -96,13 +96,17 @@ namespace kogebogen.Controllers
         {
 
             Recipe test = repo.CookBook.Find(x => x.ID == r);
-            if (u.Madplan.Count <= 6)
-            {
-                u.Madplan.Add(test);
-
-            }
+            u.madplan.rHolder = test;
 
             return View("Addtofoodplan", u);
+        }
+        [HttpPost]
+        public IActionResult AddToPlan(string day, int rec)
+        {
+            Recipe r = repo.CookBook.Find(x => x.ID == rec);
+            u.madplan.days.Where(x => x.Name == day).Single().recipe = r;
+
+            return View("ShowPlan",u);
         }
         [HttpPost]
         public IActionResult RemoveRecipe(int r)

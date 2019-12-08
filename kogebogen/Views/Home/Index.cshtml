@@ -1,27 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="~/css/front.css">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <form method="post" asp-controller="Home" asp-action="AddRecipe">
-        <button type="submit">Tilføj opskrift</button>
-    </form>
-    <form asp-controller="Home" asp-action="Recipes" method="post">
-        <button type="submit"> Opskrifterne </button>
-    </form>
-    <form asp-controller="Home" method="post" asp-action="Myrecipes">
-        <button type="submit">Min side</button>
-    </form>
-    <form asp-controller="Home" method="post" asp-action="Addtofoodplan">
-        <button type="submit">Mad plan</button>
-    </form>
+<h1>kogebogen</h1>
 
-    <form asp-action="Search" asp-controller="Home" method="post">
-        <input type="text" name="searchValue" />
-        <button type="submit" class="fas fa-search">Søg</button>
-    </form>
-</div>
+<nav>
+    <button class="fas fa-user-alt  openProfil"></button>
+    <div class="profileModal">
+        <img src="~/img/" />
+        <p class="profilName"></p>
+        <ol>
+            <li>
+                <i class="fas fa-"></i>
+                <a href="#">Mine opskrifter</a>
+            </li>
+            <li>
+                <a href="#">content</a>
+            </li>
+            <li>
+                <a href="#">content</a>
+            </li>
+            <li>
+                <a href="#">content</a>
+            </li>
+        </ol>
+    </div>
+</nav>
+
+<i class="fas fa-address-book"></i>
+<img src="~/img/address-book-solid.svg" alt="Alternate Text" />
+
+
+<form method="post" asp-controller="Home" asp-action="AddRecipe">
+    <button type="submit">Tilføj opskrift</button>
+</form>
+<form asp-controller="Home" asp-action="Recipes" method="post">
+    <button type="submit"> Opskrifterne </button>
+</form>
+<form asp-controller="Home" method="post" asp-action="Myrecipes">
+    <button type="submit">Min side</button>
+</form>
+<form asp-controller="Home" method="post" asp-action="ShowPlan">
+    <button type="submit">Mad plan</button>
+</form>
+
+<form asp-action="Search" asp-controller="Home" method="post">
+    <input type="text" name="searchValue" />
+    <button type="submit" class="fas fa-search">Søg</button>
+</form>
