@@ -664,3 +664,9 @@ C:\Users\densk\OneDrive\Dokumenter\GitHub\kogebogen---gruppe-3\kogebogen\obj\Deb
 C:\Users\densk\OneDrive\Dokumenter\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.csproj.CopyComplete
 C:\Users\densk\OneDrive\Dokumenter\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.dll
 C:\Users\densk\OneDrive\Dokumenter\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\kogebogen.pdb
+C:\Users\Peter\Documents\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Addfav.cshtml.g.cs
+C:\Users\Peter\Documents\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Addtofoodplan.cshtml.g.cs
+C:\Users\Peter\Documents\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\Search.cshtml.g.cs
+C:\Users\Peter\Documents\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\ShoppingList.cshtml.g.cs
+C:\Users\Peter\Documents\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\ShowPlan.cshtml.g.cs
+C:\Users\Peter\Documents\GitHub\kogebogen---gruppe-3\kogebogen\obj\Debug\netcoreapp3.0\Razor\Views\Home\TheRecipe.cshtml.g.cs

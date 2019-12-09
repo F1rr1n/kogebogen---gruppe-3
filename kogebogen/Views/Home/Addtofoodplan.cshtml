@@ -16,7 +16,7 @@
 @foreach (Days day in Model.madplan.days)
 {
     @day.Name <br />
-    @if (day.recipe == null)
+    @if (day.Recipe == null)
     {
         <form method="post" asp-controller="Home" asp-action="AddToPlan">
             <input type="hidden" name="day" value="@day.Name" />

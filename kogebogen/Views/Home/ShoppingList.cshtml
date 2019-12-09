@@ -1,11 +1,11 @@
-﻿@model Recipe
+﻿@model User
 @{
     ViewData["Title"] = "ShoppingList";
 }
 
 <h1>ShoppingList</h1>
 
-@foreach (ModelIngredient i in Model.Ingredients)
+@foreach (ModelIngredient i in Model.ShoppingList)
 {
     <tr>
         <td>@i.amount</td>

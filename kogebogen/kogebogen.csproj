@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Ingredients\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\js\AddIngredient.js" />
   </ItemGroup>
 

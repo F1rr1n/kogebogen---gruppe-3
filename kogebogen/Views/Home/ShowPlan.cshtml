@@ -9,10 +9,13 @@
 {
     @Model.madplan.days[i].Name
     <br />
-    @if (Model.madplan.days[i].recipe != null)
+    @if (Model.madplan.days[i].Recipe != null)
     {
-        @Model.madplan.days[i].recipe.Name<br />
-
+        <form method="post" asp-controller="Home" asp-action="AddToShoppingList">
+            @Model.madplan.days[i].Recipe.Name<br />
+            <input type="hidden" value="@Model.madplan.days[i].Recipe.ID" name="ID"/>
+            <button type="submit">Tilføj til indkøbsliste</button>
+        </form>
     }
     else
     {

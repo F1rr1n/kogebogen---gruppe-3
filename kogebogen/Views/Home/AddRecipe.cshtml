@@ -1,6 +1,4 @@
-﻿@using kogebogen.Repository;
-@model Repositories
-
+﻿
 @{
     ViewData["Title"] = "AddRecipe";
 }
@@ -24,8 +22,8 @@
     </div>
 
 
-    <button onclick="micro()">Tilføj ingrediens</button>
-    <button onclick="remove()">Fjern ingediens</button>
+    <button onclick="micro(event)">Tilføj ingrediens</button>
+    <button onclick="remove(event)">Fjern ingediens</button>
     <br />
     <input type="number" value="time" name="time" required /> tid i minutter
     <br />
@@ -34,8 +32,8 @@
             <li><input type="text" name="guide" required /></li>
         </ol>
     </div>
-    <button onclick="test()">Tilføj trin</button>
-    <button onclick="fjerntrin()">Fjern Trin</button>
+    <button onclick="test(event)">Tilføj trin</button>
+    <button onclick="fjerntrin(event)">Fjern Trin</button>
 
     <button type="submit">Tilføj opskrift</button>
 </form>
