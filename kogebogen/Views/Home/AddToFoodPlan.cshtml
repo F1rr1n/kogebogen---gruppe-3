@@ -1,0 +1,16 @@
+﻿@model User
+@{
+    ViewData["Title"] = "AddToFoodPlan";
+}
+
+<h1>AddToFoodPlan</h1>
+
+@foreach (Days days in Model.madplan.days)
+{
+    <p>@days.Name</p>
+    <form method="post" asp-controller="Home" asp-action="AddToPlan">
+        <input type="hidden" name="day" value="@days.Name" />
+        <input type="hidden" name="rec" value="@Model.madplan.rHolder.ID" />
+        <button type="submit">Tilføj til dag</button>
+    </form>
+}

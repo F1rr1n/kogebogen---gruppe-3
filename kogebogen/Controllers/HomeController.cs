@@ -25,12 +25,7 @@ namespace kogebogen.Controllers
 
         public IActionResult Index()
         {
-            // Midlertidig test værdier
-            repo.CookBook.Add(new Recipe("Pasta al dente"));
-            u.Own.Add(repo.CookBook[3]);
-            u.Own[0].Guide.Add("test1");
-            u.Own[0].Guide.Add("test2");
-            u.Own[0].Guide.Add("test3");
+
             return View();
         }
 
@@ -60,7 +55,10 @@ namespace kogebogen.Controllers
             return View(u);
         }
 
-
+        public IActionResult ShowPlan()
+        {
+            return View(u);
+        }
         [HttpPost]
         public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
         {
@@ -104,12 +102,12 @@ namespace kogebogen.Controllers
         }
 
         [HttpPost]
-        public IActionResult Addtofoodplan(int id)
+        public IActionResult AddToFoodPlan(int id)
         {
             // Finder opskriften via ID og føjer den til vores madplan
             Recipe recPlan = repo.CookBook.Find(rec => rec.ID == id);
             u.madplan.rHolder = recPlan;
-            return View("Addtofoodplan", u);
+            return View(u);
         }
         [HttpPost]
         public IActionResult AddToPlan(string day, int rec)
