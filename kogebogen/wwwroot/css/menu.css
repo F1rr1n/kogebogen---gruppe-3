@@ -1,8 +1,4 @@
-﻿.navbar {
-    display: none;
-}
-
-body {
+﻿body {
     background-color: #2D4D24;
 }
 
@@ -24,17 +20,26 @@ body {
     background-position: center;
 }
 
-
-button span, a span {
-    border-radius: 50%;
-    border: 2px solid #6ca15d;
-    padding: 2%;
-    font-size: 2.9em;
-    padding: 20%;
+.grid-container form {
+    text-align: center;
 }
 
-button p, a p {
-    font-size: 0.9em;
+.grid-container button, .grid-container a {
+    width: 100%;
+}
+
+.grid-container button span, .grid-container a span {
+    border-radius: 50%;
+    border: 2px solid #6ca15d;
+    font-size: 2.9rem;
+    padding: 20%;
+    width: 100%;
+    text-align: center;
+}
+
+.grid-container button p, .grid-container a p {
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .opskrifter {

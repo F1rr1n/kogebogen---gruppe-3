@@ -34,6 +34,11 @@ namespace kogebogen.Controllers
             return View();
         }
 
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -54,6 +59,7 @@ namespace kogebogen.Controllers
         {
             return View(u);
         }
+
 
         [HttpPost]
         public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)

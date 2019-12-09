@@ -1,7 +1,15 @@
-﻿* {
+﻿.navbar {
+    display: none;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #2D4D24;
 }
 
 h1, h2, h3 {
@@ -39,11 +47,11 @@ button, a {
 
 .profileModal {
     left: -70vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 70vw;
     height: 100vh;
-    background-color: #2D4D24;
+    background-color: #3e5e35;
     animation-duration: 1s;
 }
 
@@ -71,14 +79,19 @@ button, a {
     border-bottom: 2px solid #6ca15d;
     width: 90%;
     margin: 0 5%;
+    list-style-type: none;
 }
 
 .profileModal button, .profileModal a {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     width: 90%;
     margin: 0 5%;
     padding: 5% 0;
     text-align: left;
+}
+
+.profileModal p {
+    font-size: 1.4rem;
 }
 
 .profileModal img {
@@ -89,20 +102,20 @@ button, a {
 .profileModal h2 {
     position: absolute;
     top: 17vh;
-    color: #2D4D24;
+    color: #3e5e35;
     margin: 0 5%;
 }
 
 .profileModal span {
     margin-right: 5%;
     border: none;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     padding: 0;
 }
 
-#back {
+.profileModal #back {
     position: absolute;
     bottom: 0;
     text-align: right;
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }

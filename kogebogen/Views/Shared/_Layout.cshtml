@@ -47,19 +47,29 @@
             <li>
                 <form asp-controller="Home" method="post" asp-action="Myrecipes">
                     <button type="submit">
-                        <span class="fas fa-address-book"></span>
-                        Mine opskrifter
+                        <span class="fas fa-address-book"></span> Mine opskrifter
                     </button>
                 </form>
             </li>
             <li>
-                <a asp-controller="Home" asp-action="Addfav"><span class="fas fa-heart"></span>Mine favoritter</a>
+                <form method="post" asp-controller="Home" asp-action="Addfav">
+                    <button type="submit">
+                        <span class="fas fa-heart"></span> Mine favoritter
+                    </button>
+                </form>
             </li>
             <li>
-                <a asp-controller="Home" asp-action="AddRecipe"><span class="fas fa-plus"></span>Tilføj ny opskrift</a>
+                <form method="post" asp-controller="Home" asp-action="AddRecipe">
+                    <button type="submit">
+                        <span class="fas fa-plus"></span> Tilføj ny opskrift
+                    </button>
+                </form>
             </li>
             <li>
-                <a href="#"><span class="fas fa-unlock-alt"></span>Log ud</a>
+                <button type="submit">
+                    <span class="fas fa-unlock-alt"></span> Log ud
+                </button>
+
             </li>
         </ol>
         <button class="fas fa-arrow-left" id="back"></button>
