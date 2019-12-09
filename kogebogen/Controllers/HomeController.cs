@@ -190,7 +190,7 @@ namespace kogebogen.Controllers
             // Vi laver et nyt objekt til at holde alle de opskrifter vi finder
             RecipeHolder rHolder = new RecipeHolder();
             // Finder alle opskrifter hvor søge værdien indgår i navnet
-            var meh = repo.CookBook.Where(x => x.Name.Contains(searchValue));
+            var meh = repo.CookBook.Where(x => x.Name.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
             // Gennemgår de værdier fundet, giver dem med og tæller op for hvor mange opskrifter der er fundet
             foreach (var v in meh)
             {
@@ -203,7 +203,7 @@ namespace kogebogen.Controllers
             {
                 for (int i = 0; i < r.Ingredients.Count; i++)
                 {
-                    if (r.Ingredients[i].Ingredient.Name.Contains(searchValue))
+                    if (r.Ingredients[i].Ingredient.Name.Contains(searchValue, StringComparison.OrdinalIgnoreCase))
                     {
                         rHolder.recipes.Add(r);
                     }
