@@ -65,7 +65,7 @@ namespace kogebogen.Repository
             Ingredient Onion = new Ingredient("Løg", null);
             Ingredient Garlic = new Ingredient("Hvidløg", "fed");
             Ingredient Chives = new Ingredient("Purløg", null);
-            Ingredient Beetroot = new Ingredient("Rødbede", null);
+            Ingredient Beetroot = new Ingredient("Rødbede", "g");
             Ingredient Potato = new Ingredient("Kartofler", "g");
             Ingredient Carrot = new Ingredient("Gulerødder", null);
             Ingredient Broccoli = new Ingredient("Broccoli", "g");
@@ -104,7 +104,7 @@ namespace kogebogen.Repository
             Ingredient Butter = new Ingredient("Smør", "g");
             Ingredient Honey = new Ingredient("Flydende honning", "spsk");
             Ingredient Guacamole = new Ingredient("Guacamole", null);
-            Ingredient MornaySauce = new Ingredient("Mornay sauce", "pap-bøtte");
+            Ingredient MornaySauce = new Ingredient("Mornay sauce", "pk");
             IngredientList.Add(TomatoSauce);
             IngredientList.Add(CoconutMilk);
             IngredientList.Add(Milk);
