@@ -84,7 +84,7 @@ namespace kogebogen.Controllers
             return View("Index");
 
         }
-        public IActionResult Addfav(int id)
+        public string Addfav(int id)
         {
             // Finder opskriften baseret på dets ID og sætter det på et nyt Recipe objekt
             Recipe recFav = repo.CookBook.Find(rec => rec.ID == id);
@@ -93,12 +93,15 @@ namespace kogebogen.Controllers
             {
                 u.Favorites.Add(recFav);
             }
-
-            return View("Addfav", u);
+            else
+            {
+                u.Favorites.Remove(recFav);
+            }
+            return "ok" + id;
         }
 
         [HttpPost]
-        public IActionResult Addtofoodplan(int id)
+        public IActionResult AddToFoodPlan(int id)
         {
             // Finder opskriften via ID og føjer den til vores madplan
             Recipe recPlan = repo.CookBook.Find(rec => rec.ID == id);
@@ -190,7 +193,7 @@ namespace kogebogen.Controllers
             // Vi laver et nyt objekt til at holde alle de opskrifter vi finder
             RecipeHolder rHolder = new RecipeHolder();
             // Finder alle opskrifter hvor søge værdien indgår i navnet
-            var meh = repo.CookBook.Where(x => x.Name.Contains(searchValue));
+            var meh = repo.CookBook.Where(x => x.Name.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
             // Gennemgår de værdier fundet, giver dem med og tæller op for hvor mange opskrifter der er fundet
             foreach (var v in meh)
             {
@@ -203,7 +206,7 @@ namespace kogebogen.Controllers
             {
                 for (int i = 0; i < r.Ingredients.Count; i++)
                 {
-                    if (r.Ingredients[i].Ingredient.Name.Contains(searchValue))
+                    if (r.Ingredients[i].Ingredient.Name.Contains(searchValue, StringComparison.OrdinalIgnoreCase))
                     {
                         rHolder.recipes.Add(r);
                     }
@@ -218,9 +221,17 @@ namespace kogebogen.Controllers
             Recipe recipe = repo.CookBook.Find(recipe => recipe.ID == id);
             foreach (ModelIngredient ingredient in recipe.Ingredients)
             {
-                if (!u.ShoppingList.Contains(ingredient))
+                //for(int i = 0; i < recipe.Ingredients.Count; i++)
+                //{
+                //    if(!u.ShoppingList[i].Ingredient.Name ==)
+                //}
+                if (!u.ShoppingList.Any(n=> n.Ingredient.Name == ingredient.Ingredient.Name))
                 {
                     u.ShoppingList.Add(ingredient);
+                }
+                else
+                {
+                    u.ShoppingList.Find(n => n.Ingredient.Name == ingredient.Ingredient.Name).amount += ingredient.amount;
                 }
             }
             return View("Index");
