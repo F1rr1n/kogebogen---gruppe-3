@@ -47,3 +47,9 @@ for (var i = 0; i < ranges.length; i++) {
         }
     });
 }
+
+function addFav(id) {
+    fetch('https://localhost:44391/Home/Addfav/${id}', {
+        method: 'GET'
+    })
+}

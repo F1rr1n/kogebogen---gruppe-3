@@ -14,23 +14,23 @@ namespace kogebogen.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private Repositories repo;
-        private User u;
+        private User user;
 
-        public HomeController(ILogger<HomeController> logger, Repositories repos, User user)
+        public HomeController(ILogger<HomeController> logger, Repositories repos, User users)
         {
             _logger = logger;
             repo = repos;
-            u = user;
+            user = users;
         }
 
         public IActionResult Index()
         {
             // Midlertidig test værdier
             repo.CookBook.Add(new Recipe("Pasta al dente"));
-            u.Own.Add(repo.CookBook[3]);
-            u.Own[0].Guide.Add("test1");
-            u.Own[0].Guide.Add("test2");
-            u.Own[0].Guide.Add("test3");
+            user.Own.Add(repo.CookBook[3]);
+            user.Own[0].Guide.Add("test1");
+            user.Own[0].Guide.Add("test2");
+            user.Own[0].Guide.Add("test3");
             return View();
         }
 
@@ -58,24 +58,28 @@ namespace kogebogen.Controllers
         [HttpPost]
         public IActionResult Myrecipes()
         {
-            return View(u);
+            return View(user);
         }
 
         [HttpPost]
-        public IActionResult AddRecipeTest(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
+        public IActionResult AddRecipeComplete(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
         {
             // Laver noge nye objekter til at holder værdierne
             Recipe recipe = new Recipe();
-            Ingredient ingredient;
-            ModelIngredient mIngredient;
+            Ingredient ingHolder;
+            ModelIngredient mIng;
             recipe.Name = title;
             // Gennemgår ingredienserne lavet og lægger dem til listen af ingredienser på opskriften
             for (int i = 0; i < ingredients.Count; i++)
             {
                 // Sætter værdierne og gemmer dem 
-                ingredient = new Ingredient(ingredients[i], unit[i]);
-                mIngredient = new ModelIngredient(ingredient, amount[i]);
-                recipe.Ingredients.Add(mIngredient);
+                ingHolder = new Ingredient(ingredients[i], unit[i]);
+                mIng = new ModelIngredient(ingHolder, amount[i]);
+                recipe.Ingredients.Add(mIng);
+                if (!repo.IngredientList.Any(reci => reci.Name.Contains(ingHolder.Name, StringComparison.OrdinalIgnoreCase)))
+                {
+                    repo.IngredientList.Add(ingHolder);
+                }
             }
             recipe.Time = time;
             recipe.Description = description;
@@ -84,26 +88,27 @@ namespace kogebogen.Controllers
             {
                 recipe.Guide.Add(s);
             }
+            // Sætter ID'et til at være nummeret i listen og tilføjer den til repositoriet og brugerens egne opskrifter
             recipe.ID = repo.CookBook.Count;
             repo.CookBook.Add(recipe);
-            u.Own.Add(recipe);
+            user.Own.Add(recipe);
             return View("Index");
 
         }
-        public IActionResult Addfav(int id)
+        public string Addfav(int id)
         {
             // Finder opskriften baseret på dets ID og sætter det på et nyt Recipe objekt
             Recipe recFav = repo.CookBook.Find(rec => rec.ID == id);
             // Hvis opskriften ikke allerede findes i favoritter tilføjes den
-            if (!u.Favorites.Contains(recFav))
+            if (!user.Favorites.Contains(recFav))
             {
-                u.Favorites.Add(recFav);
+                user.Favorites.Add(recFav);
             }
             else
             {
-                u.Favorites.Remove(recFav);
+                user.Favorites.Remove(recFav);
             }
-            return View(u);
+            return "ok" + id;
         }
 
         [HttpPost]
@@ -111,8 +116,9 @@ namespace kogebogen.Controllers
         {
             // Finder opskriften via ID og føjer den til vores madplan
             Recipe recPlan = repo.CookBook.Find(rec => rec.ID == id);
-            u.madplan.rHolder = recPlan;
-            return View("Addtofoodplan", u);
+            // Holder den på madplanen indtil den bliver tildelt en specifik dag
+            user.madplan.rHolder = recPlan;
+            return View("Addtofoodplan", user);
         }
         [HttpPost]
         public IActionResult AddToPlan(string day, int rec)
@@ -120,10 +126,10 @@ namespace kogebogen.Controllers
             // Finder opsrkiften via ID
             Recipe recipe = repo.CookBook.Find(recipe => recipe.ID == rec);
             // Finder dagen baseret på dagen og sætter opskriften ind på dagen
-            u.madplan.days.Where(recipe => recipe.Name == day).Single().Recipe = recipe;
+            user.madplan.days.Where(recipe => recipe.Name == day).Single().Recipe = recipe;
             // Kører en metode der samler den totale pris for madplanen
-            u.madplan.Price(recipe.TotalPrice);
-            return View("ShowPlan", u);
+            user.madplan.Price(recipe.TotalPrice);
+            return View("ShowPlan", user);
         }
         [HttpPost]
         public IActionResult RemoveRecipe(int id)
@@ -131,8 +137,8 @@ namespace kogebogen.Controllers
             // Finder opskriften via ID
             Recipe recipe = repo.CookBook.Find(recipe => recipe.ID == id);
             // Fjerne opskriften med det nye opskrift objekt
-            u.Own.Remove(recipe);
-            return View("Myrecipes", u);
+            user.Own.Remove(recipe);
+            return View("Myrecipes", user);
         }
 
         [HttpPost]
@@ -154,9 +160,13 @@ namespace kogebogen.Controllers
                 // Hvis antallet af ingredienser er højere end før laver den nogle nye
                 if (i >= recipe.Ingredients.Count)
                 {
-                    Ingredient inter = new Ingredient(ingredients[i], unit[i]);
-                    ModelIngredient mo = new ModelIngredient(inter, amount[i]);
-                    recipe.Ingredients.Add(mo);
+                    Ingredient ingHolder = new Ingredient(ingredients[i], unit[i]);
+                    ModelIngredient mIHolder = new ModelIngredient(ingHolder, amount[i]);
+                    recipe.Ingredients.Add(mIHolder);
+                    if (!repo.IngredientList.Any(reci => reci.Name.Contains(ingHolder.Name, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        repo.IngredientList.Add(ingHolder);
+                    }
                 }
                 // Hvis ikke, så bare sæt de nye værdier ind på de eksisterende ingredienser
                 else
@@ -182,7 +192,7 @@ namespace kogebogen.Controllers
                 }
             }
             repo.CookBook[id] = recipe;
-            return View("Myrecipes", u);
+            return View("Myrecipes", user);
         }
 
         [HttpPost]
@@ -199,7 +209,7 @@ namespace kogebogen.Controllers
             // Vi laver et nyt objekt til at holde alle de opskrifter vi finder
             RecipeHolder rHolder = new RecipeHolder();
             // Finder alle opskrifter hvor søge værdien indgår i navnet
-            var meh = repo.CookBook.Where(x => x.Name.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
+            var meh = repo.CookBook.Where(reci => reci.Name.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
             // Gennemgår de værdier fundet, giver dem med og tæller op for hvor mange opskrifter der er fundet
             foreach (var v in meh)
             {
@@ -231,20 +241,20 @@ namespace kogebogen.Controllers
                 //{
                 //    if(!u.ShoppingList[i].Ingredient.Name ==)
                 //}
-                if (!u.ShoppingList.Any(n=> n.Ingredient.Name == ingredient.Ingredient.Name))
+                if (!user.ShoppingList.Any(n => n.Ingredient.Name == ingredient.Ingredient.Name))
                 {
-                    u.ShoppingList.Add(ingredient);
+                    user.ShoppingList.Add(ingredient);
                 }
                 else
                 {
-                    u.ShoppingList.Find(n => n.Ingredient.Name == ingredient.Ingredient.Name).amount += ingredient.amount;
+                    user.ShoppingList.Find(n => n.Ingredient.Name == ingredient.Ingredient.Name).amount += ingredient.amount;
                 }
             }
             return View("Index");
         }
         public IActionResult ShoppingList()
         {
-            return View(u);
+            return View(user);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
