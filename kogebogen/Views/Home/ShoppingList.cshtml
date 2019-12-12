@@ -5,16 +5,20 @@
 
 <link rel="stylesheet" type="text/css" href="~/css/Shoppinglist.css">
 
-<h1>ShoppingList</h1>
+<h1>Indkøbsliste</h1>
 <table>
     @foreach (ModelIngredient i in Model.ShoppingList)
     {
 
-        <tr>
-            <td>@i.amount</td>
-            <td>@i.Ingredient.Unit</td>
-            <td>@i.Ingredient.Name</td>
-        </tr>
+    <tr>
+        <td>@i.Ingredient.Name</td>
+        <td>@i.amount</td>
+        <td>@i.Ingredient.Unit</td>
+
+
+    </tr>
+      
+        
 
     }
 </table>

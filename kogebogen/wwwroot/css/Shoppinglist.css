@@ -1,7 +1,8 @@
-﻿table{
-    margin-right: 3vw;
+﻿table {
+    border-spacing: 8vw 0;
+    font-size: 1.2em;
+    margin-left: 12vw;
 }
-table td{
-    margin-right: 2vw;
+p{
+    text-align: center;
 }
-
