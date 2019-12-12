@@ -1,58 +1,122 @@
-﻿.navbar {
-    display: none;
-}
-
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #2D4D24;
+.navBar {
+    background-image: url(/img/Layer22.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-position: bottom;
+    height: 8vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.home {
+    width: 55% !important;
+}
+
+
+nav#navBaren a, #navBaren button {
+    color: white;
+    font-size: 1.8rem;
+    width: 10%;
 }
 
 h1, h2, h3 {
     font-family: 'Segoe UI', Arial, Verdana, sans-serif;
     font-weight: bold;
     text-transform: capitalize;
-    color: white;
+    color: black;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 h2 {
-    font-size: 2.5em; 
+    font-size: 2.3em;
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 p {
     font-family: 'Open Sans', Arial, Verdana, sans-serif;
     font-size: 1.5em;
-    color: white;
+    color: black;
 }
 
 button, a {
-    color: white;
+    color: black;
     font-family: 'Open Sans', Arial, Verdana, sans-serif;
     background-color: transparent;
     border: none;
     text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+#swipeField {
+    position: fixed;
+    top: 0;
+    width: 15vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.searchForm {
+    background-color: #2D4D24;
+    margin: -0.2% 0px 0px;
+    align-items: center;
+    padding: 2% 5% 4%;
+    animation: search 0.3s forwards ease-in;
+}
+
+@keyframes search {
+    from {
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+
+    to {
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+}
+
+.searchForm br {
+    display: none;
+}
+
+#searchField {
+    font-size: 1.2rem;
+    padding: 1%;
+    margin-right: 5%;
+}
+
+.searchForm button {
+    font-size: 2rem;
+    color: white;
 }
 
 .profileModal {
     left: -70vw;
     position: fixed;
+    z-index: 2;
     top: 0;
     width: 70vw;
     height: 100vh;
     background-color: #3e5e35;
     animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes in {
@@ -83,6 +147,7 @@ button, a {
 }
 
 .profileModal button, .profileModal a {
+    color: white;
     font-size: 1.4rem;
     width: 90%;
     margin: 0 5%;

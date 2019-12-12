@@ -3,13 +3,6 @@
 }
 <link href="~/css/menu.css" rel="stylesheet" />
 
-<!-- Modalbox for søgning -->
-<form asp-action="Search" asp-controller="Home" method="post" class="searchForm" id="searchModal">
-    <input type="text" name="searchValue" id="searchField" /> <br />
-    <button type="submit" class="fas fa-search"></button>
-</form>
-
-
 <div class="grid-container">
     <form method="post" asp-controller="Home" asp-action="Recipes" class="opskrifter">
         <button type="submit">
@@ -35,12 +28,10 @@
             <p>Favoritter</p>
         </button>
     </form>
-    <form method="post">
         <button id="searchButton">
             <span class="fas fa-search"></span>
             <p>Søg</p>
         </button>
-    </form>
     <button id="openProfile">
         <span class="fas fa-user-alt"></span>
         <p>Min profil</p>

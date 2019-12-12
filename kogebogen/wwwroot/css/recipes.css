@@ -1,0 +1,127 @@
+﻿h1 {
+    margin: 0 2vw;
+}
+
+.content {
+    display: none;
+    animation: foldOut 0.5s forwards ease-in;
+}
+
+.collapsible {
+    width: 50px;
+    height: 50px;
+    background-color: #2D4D24;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1vh 2vw;
+    animation: 0.5s forwards ease-in;
+    position: relative;
+}
+
+.collapsible span {
+    height: 3vh;
+}
+
+hr {
+    width: 50%;
+    margin: 2vh auto;
+    height: 0.5vh;
+    background-color: #6ca15d;
+    border-radius: 50%;
+}
+
+.recipes {
+    margin: 0 2vw 2vh;
+    word-break: break-word;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20vh;
+}
+
+.theRecipe {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theRecipe h2 {
+    width: 55%;
+}
+
+.theRecipeBtn {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.theRecipe img {
+    width: 45%;
+    height: 100%;
+}
+
+.addButtons {
+    width: 15%;
+    text-align: center;
+}
+
+.addButtons button {
+    font-size: 2em;
+    color: #2D4D24;
+}
+
+#love {
+    color: black;
+}
+
+.totalPrice, .totalTime {
+    display: none;
+}
+
+
+@keyframes foldOut {
+    from {
+        transform-origin: top left;
+        transform: scale(0.5);
+    }
+
+    to {
+        transform-origin: top left;
+        transform: scale(1);
+        position: relative;
+        border-radius: 2% 12% 2%;
+        border: solid 2px #2D4D24;
+        margin: -50px 2vw 2vh;
+        padding: 50px 5% 5%;
+    }
+} 
+
+@keyframes buttonOpen {
+    from {
+        background-color: #2D4D24;
+        color: white;
+    }
+
+    to {
+        background-color: transparent;
+        color: #2D4D24;
+    }
+}
+
+@keyframes buttonClose {
+    from {
+        background-color: transparent;
+        color: #2D4D24;
+    }
+
+    to {
+        background-color: #2D4D24;
+        color: white;
+    }
+}

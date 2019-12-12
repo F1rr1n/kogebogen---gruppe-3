@@ -3,20 +3,31 @@
 @{
     ViewData["Title"] = "Addfav";
 }
+<link rel="stylesheet" type="text/css" href="~/css/recipes.css">
 
-<h1>Addfav</h1>
-
-
+<h1>Mine favoritter</h1>
 
 @foreach (Recipe r in Model.Favorites)
 {
+    <div class="recipes">
+        <hr />
+        <div class="flex-container">
+            <!-- Klik ind på den enkelte opskrift -->
+            <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
+                <input type="hidden" name="OpskriftID" value="@r.ID" />
+                <h2>
+                    <button type="submit" class="theRecipeBtn">@r.Name</button>
+                </h2>
+                <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
+            </form>
 
-    <div class="flex-container" style="display:flex">
-        <h2>@r.Name</h2>
-        <img src="~/img/@r.ImageUrl" />
-        
-
+            <div class="addButtons">
+                <form class="myRecipes addTo" method="post" asp-controller="Home" asp-action="RemoveRecipe">
+                    <input type="hidden" name="r" value="@r.ID" />
+                    <button type="submit" class="fas fa-minus-square"></button>
+                </form>
+            </div>
+        </div>
     </div>
-
 
 }

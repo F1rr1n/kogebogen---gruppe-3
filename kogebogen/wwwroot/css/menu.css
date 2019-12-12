@@ -1,5 +1,13 @@
-﻿body {
+﻿.navBar {
+    display: none;
+}
+
+body {
     background-color: #2D4D24;
+}
+
+h1, h2, h3, p, button, a {
+    color: white;
 }
 
 .grid-container {
@@ -75,18 +83,22 @@
 }
 
 .searchForm {
-    display: none;
+    background-color: transparent;
     width: 70vw;
     position: absolute;
-    top: 7vh;
+    top: 4vh;
     margin: 0 15vw;
+    animation: none;
 }
 
-    .searchForm button {
-        width: 100%;
-        text-align: center;
-        font-size: 2em;
-    }
+.searchForm br {
+    display: block;
+}
+
+.searchForm button {
+    width: 100%;
+    text-align: center;
+}
 
 #searchField {
     width: 100%;
