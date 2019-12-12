@@ -56,3 +56,8 @@ for (var i = 0; i < favorite.length; i++) {
         this.style.color = "#960525";
     });
 }
+function addToFavList(id) {
+    fetch(`https://localhost:44391/Home/AddFavToList/${id}`, {
+        method: 'GET'
+    })
+}
