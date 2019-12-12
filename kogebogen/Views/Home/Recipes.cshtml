@@ -4,9 +4,13 @@
     ViewData["Title"] = "Recipes";
 }
 
-<h1>Recipes</h1>
-<button class="collapsible">Filtrer<i class="fas fa-sort-down"></i></button>
-<div class="content" style="display:none;">
+<link rel="stylesheet" type="text/css" href="~/css/recipes.css">
+
+<h1>Opskrifter</h1>
+<button class="collapsible">
+    <span class="fas fa-filter"></span>
+</button>
+<div class="content" id="content">
     <div class="slidecontainer">
         <p id="filterPrice"></p>
         20 kr <input type="range" class="slider" id="priceRange" name="rangeInput" min="20" max="120" value="70"> 120 kr
@@ -15,9 +19,12 @@
         10 min <input type="range" class="slider" id="timeRange" name="rangeInput" min="10" max="180" value="85"> 180 min
     </div>
 </div>
+<br />
 
-<button class="collapsible">Sortér efter <i class="fas fa-sort-down"></i></button>
-<div class="content" style="display:none;">
+<button class="collapsible">
+    <span class="fas fa-sort"></span>
+</button>
+<div class="content" style="display:none;" id="sortContent">
     <input type="checkbox" name="sorting" value="newest"> Nyeste <br />
     <input type="checkbox" name="sorting" value="price1"> Pris lav til høj <br />
     <input type="checkbox" name="sorting" value="price2"> Pris høj til lav <br />
@@ -29,25 +36,28 @@
 @foreach (Recipe r in Model.CookBook)
 {
     <div class="recipes">
-        <hr width="50%" color="black" />
-        <div class="flex-container" style="display:flex; justify-content:space-between;">
+        <hr />
+        <div class="flex-container">
             <!-- Klik ind på den enkelte opskrift -->
-            <form asp-controller="Home" method="post" asp-action="TheRecipe">
+            <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
                 <input type="hidden" name="OpskriftID" value="@r.ID" />
-                <h2 style="width:50vw"><button type="submit">@r.Name</button></h2>
-            </form>
-            <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
-
-            <form asp-action="Addfav" asp-controller="Home" method="post">
-                <input type="hidden" name="r" value="@r.ID" />
-                <button type="submit" class="fas fa-heart"></button>
+                <h2>
+                    <button type="submit" class="theRecipeBtn">@r.Name</button>
+                </h2>
+                <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
             </form>
 
-            <form asp-action="Addtofoodplan" asp-controller="Home" method="post">
-                <input type="hidden" name="r" value="@r.ID" />
-                <button type="submit" class="fas fa-calendar-alt"></button>
-            </form>
+            <div class="addButtons">
+                <form method="post" class="addTo" asp-controller="Home" asp-action="Addfav">
+                    <input type="hidden" name="r" value="@r.ID" />
+                    <button type="button" class="fas fa-heart love"></button>
+                </form>
 
+                <form asp-action="Addtofoodplan" asp-controller="Home" method="post" class="addTo">
+                    <input type="hidden" name="r" value="@r.ID" />
+                    <button type="submit" class="fas fa-calendar-alt"></button>
+                </form>
+            </div>
         </div>
         <p class="totalPrice"> @r.TotalPrice</p>
         <p class="totalTime"> @r.Time</p>

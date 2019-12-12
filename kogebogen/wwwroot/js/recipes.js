@@ -6,8 +6,10 @@ for (var i = 0; i < coll.length; i++) {
         var content = this.nextElementSibling;
         if (content.style.display === "block") {
             content.style.display = "none";
+            this.style.animationName = "";
         } else {
             content.style.display = "block";
+            this.style.animationName = "buttonOpen";
         }
     });
 }
@@ -45,5 +47,12 @@ for (var i = 0; i < ranges.length; i++) {
                 recipes[x].style.display = "block";
             }
         }
+    });
+}
+var favorite = document.getElementsByClassName("love");
+
+for (var i = 0; i < favorite.length; i++) {
+    favorite[i].addEventListener('click', function () {
+        this.style.color = "#960525";
     });
 }
