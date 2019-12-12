@@ -3,7 +3,7 @@
     ViewData["Title"] = "Search";
 }
 
-<h1>Search</h1>
+<h1>Din søgning</h1>
 
 
 <p>Title</p>
@@ -13,7 +13,7 @@
     <br />
 }
 
-<p>Disse opskrifter passer til hvad du søgte efter</p>
+<p>Disse opskrifter passer til din søgning</p>
 @for (int i = Model.recipeCounter; i < Model.recipes.Count; i++)
 {
     @Model.recipes[i].Name

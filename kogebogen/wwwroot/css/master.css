@@ -4,18 +4,26 @@
     box-sizing: border-box;
 }
 
+main {
+    position: relative;
+    top: 8vh;
+}
+
 .navBar {
     background-image: url(/img/Layer22.png);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     background-position: bottom;
     height: 8vh;
+    width: 100vw;
     align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 0 2vw;
     font-size: 1.8rem;
     font-weight: bold;
+    position: fixed;
+    z-index: 4;
 }
 
 .home {
@@ -33,11 +41,12 @@ h1, h2, h3 {
     font-family: 'Segoe UI', Arial, Verdana, sans-serif;
     font-weight: bold;
     text-transform: capitalize;
-    color: black;
+    color: #2D4D24;
 }
 
 h1 {
     font-size: 2.8em;
+    text-align: center;
 }
 
 h2 {
@@ -110,7 +119,7 @@ button, a {
 .profileModal {
     left: -70vw;
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     top: 0;
     width: 70vw;
     height: 100vh;

@@ -39,6 +39,11 @@ namespace kogebogen.Controllers
             return View();
         }
 
+        public IActionResult ShowPlan()
+        {
+            return View(user);
+        }
+
 
         public IActionResult Privacy()
         {

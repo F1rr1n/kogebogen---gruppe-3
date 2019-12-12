@@ -14,16 +14,17 @@
     }
     reader.readAsDataURL(event.target.files[0]);
 }</script>
-<h3>AddRecipe</h3>
+
+<h1>Tilføj opskrift</h1>
 
 
-<form method="post" asp-controller="Home" asp-action="AddRecipeTest">
+<form method="post" asp-controller="Home" asp-action="AddRecipeComplete">
 
     <h3>1. Navn på opskrift:</h3> <input placeholder="Title" type="text" name="title" required />
 
     <div id="wrapper">
         <h3>2. Vælg et billede</h3>
-        <input type="file" accept="image/*" onchange="preview_image(event)">
+        <input type="file" accept="image/*" onchange="preview_image(event)" class="file"/>
         <img id="output_image" />
     </div>
     
@@ -43,7 +44,7 @@
         </div>
 
         <div class="plus-minus">
-            <button class="fas fa-plus" onclick="micro(event)"></button>  <br />
+            <button class="fas fa-plus" onclick="addIng(event)"></button>  <br />
             <button class="fas fa-minus" onclick="remove(event)"></button>
 
         </div>
@@ -57,7 +58,7 @@
         </ol>
     </div>
     <div class="plus-minus">
-        <button class="fas fa-plus" onclick="test(event)"></button><br />
+        <button class="fas fa-plus" onclick="addStep(event)"></button><br />
         <button class="fas fa-minus" onclick="fjerntrin(event)"></button>
     </div>
     <button class="submit" type="submit">Tilføj</button>
