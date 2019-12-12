@@ -20,7 +20,8 @@
 
 <form method="post" asp-controller="Home" asp-action="AddRecipeComplete">
 
-    <h3>1. Navn på opskrift:</h3> <input placeholder="Title" type="text" name="title" required />
+    <h3>1. Navn på opskrift:</h3> 
+    <input placeholder="Title" type="text" name="title" required />
 
     <div id="wrapper">
         <h3>2. Vælg et billede</h3>
@@ -54,7 +55,7 @@
     <div>
         <h3>5. Fremgangsmåde</h3>
         <ol id="description_steps">
-            <li><input type="text" name="guide" placeholder="Første trin" required /></li>
+            <li><textarea name="guide" placeholder="Første trin"></textarea></li>
         </ol>
     </div>
     <div class="plus-minus">

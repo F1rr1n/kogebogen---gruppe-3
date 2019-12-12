@@ -3,17 +3,20 @@
     ViewData["Title"] = "EditRecipe";
 }
 
-    <link href="~/css/Addrecipe.css" rel="stylesheet" />
+<link href="~/css/Addrecipe.css" rel="stylesheet" />
 
 <h1>EditRecipe</h1>
+
 <form asp-controller="Home" asp-action="EditRecipe">
-    <h3>Navn på opskrift: <input type="text" name="title" required value="@Model.Name" /></h3>
+    <h3>1. Navn på opskrift:</h3>
+    <input placeholder="@Model.Name" type="text" name="title" required />
     <input type="hidden" name="id" value="@Model.ID" />
     <div id="ingredients">
+        <h3>2. Ret ingredienser:</h3>
         @foreach (ModelIngredient i in Model.Ingredients)
         {
-            <div>
-                Tilføj ingrediens: <input type="text" name="ingredients" required value="@i.Ingredient.Name" /> <input type="number" name="amount" value="@i.amount" required />
+            <p>
+                <input type="text" name="ingredients" required value="@i.Ingredient.Name" /> <input type="number" name="amount" value="@i.amount" required />
                 <select required name="unit">
                     <option value="stk">stk</option>
                     <option value="g">g</option>
@@ -21,25 +24,30 @@
                     <option value="tsk">tsk</option>
                     <option value="spsk">spsk</option>
                 </select>
-            </div>
+            </p>
         }
     </div>
-    <button onclick="addIng(event)">Tilføj ingrediens</button>
-    <button onclick="remove(event)">Fjern ingediens</button>
-    <br />
-    <input type="number" value="@Model.Time" name="time" required /> tid i minutter
+    <div class="plus-minus">
+        <button class="fas fa-plus" onclick="addIng(event)"></button>
+        <button class="fas fa-minus" onclick="remove(event)"></button>
+    </div>
+    <h3 class="tid">3. tid i minutter</h3>
+    <input type="number" value="@Model.Time" name="time" required />
     <br />
     <div>
+        <h3>4. Fremgangsmåde</h3>
         <ol id="description_steps">
             @foreach (string s in Model.Guide)
             {
-                <li><input type="text" name="guide" value="@s" required /></li>
+                <li><textarea name="guide">@s</textarea></li>
             }
         </ol>
     </div>
-    <button onclick="addStep(event)">Tilføj trin</button>
-    <button onclick="fjerntrin(event)">Fjern Trin</button>
-    <button type="submit">Rediger opskrift</button>
+    <div class="plus-minus">
+        <button class="fas fa-plus" onclick="addStep(event)"></button>
+        <button class="fas fa-minus" onclick="fjerntrin(event)"></button>
+    </div>
+    <button type="submit" class="submit">Rediger opskrift</button>
 </form>
 <script src="~/js/AddIngredient.js">
 

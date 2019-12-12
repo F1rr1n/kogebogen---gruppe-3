@@ -20,9 +20,9 @@
     position: relative;
 }
 
-.collapsible span {
-    height: 3vh;
-}
+    .collapsible span {
+        height: 3vh;
+    }
 
 hr {
     width: 50%;
@@ -36,6 +36,11 @@ hr {
     margin: 0 2vw 2vh;
     word-break: break-word;
 }
+
+    .recipes li {
+        list-style-type: none;
+        font-size: 1.5rem;
+    }
 
 .flex-container {
     display: flex;
@@ -52,9 +57,9 @@ hr {
     align-items: center;
 }
 
-.theRecipe h2 {
-    width: 55%;
-}
+    .theRecipe h2 {
+        width: 55%;
+    }
 
 .theRecipeBtn {
     font-size: 1.5rem;
@@ -71,14 +76,10 @@ hr {
     text-align: center;
 }
 
-.addButtons button {
-    font-size: 2em;
-    color: #2D4D24;
-}
-
-.love {
-    color: #2D4D24;
-}
+    .addButtons button {
+        font-size: 2em;
+        color: #2D4D24;
+    }
 
 .totalPrice, .totalTime {
     display: none;
@@ -99,7 +100,7 @@ hr {
         margin: -50px 2vw 2vh;
         padding: 50px 5% 5%;
     }
-} 
+}
 
 @keyframes buttonOpen {
     from {

@@ -3,19 +3,33 @@
     ViewData["Title"] = "Search";
 }
 
-<h1>Din søgning</h1>
+<link href="~/css/recipes.css" rel="stylesheet" />
+<div class="recipes">
+    <h1>Din søgning</h1>
 
+    <hr />
+    <h3>Titler med dit søgeord:</h3>
+    @for (int i = 0; i < Model.recipeCounter; i++)
+    {
+        <!-- Klik ind på den enkelte opskrift -->
+        <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
+            <input type="hidden" name="OpskriftID" value="@Model.recipes[i].ID" />
+            <p>
+                <button type="submit" class="theRecipeBtn">@Model.recipes[i].Name</button>
+            </p>
+        </form>
+    }
 
-<p>Title</p>
-@for (int i = 0; i < Model.recipeCounter; i++)
-{
-    @Model.recipes[i].Name
-    <br />
-}
-
-<p>Disse opskrifter passer til din søgning</p>
-@for (int i = Model.recipeCounter; i < Model.recipes.Count; i++)
-{
-    @Model.recipes[i].Name
-    <br />
-}
+    <hr />
+    <h3>Opskrifter med dit søgeord:</h3>
+    @for (int i = Model.recipeCounter; i < Model.recipes.Count; i++)
+    {
+        <!-- Klik ind på den enkelte opskrift -->
+        <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
+            <input type="hidden" name="OpskriftID" value="@Model.recipes[i].ID" />
+            <p>
+                <button type="submit" class="theRecipeBtn">@Model.recipes[i].Name</button>
+            </p>
+        </form>
+    }
+</div>
