@@ -16,7 +16,7 @@ h1, h2, h3, p, button, a {
 
 .grid-container {
     display: grid;
-    grid-template-areas: 'icon1 icon2 icon3' 'icon4 icon5 icon6' 'icon7 icon8 .';
+    grid-template-areas: 'icon1 icon2 icon3' 'icon4 icon5 icon6' 'icon7 icon8 icon9';
     grid-template-columns: repeat(3, 26.6vw);
     grid-row-gap: 5vh;
     grid-column-gap: 5vw;
@@ -82,8 +82,12 @@ h1, h2, h3, p, button, a {
     grid-area: icon7;
 }
 
-.indstillinger {
+.shoppinglist {
     grid-area: icon8;
+}
+
+.indstillinger {
+    grid-area: icon9;
 }
 
 .searchForm {
