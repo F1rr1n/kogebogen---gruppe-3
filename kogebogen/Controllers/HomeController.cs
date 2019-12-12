@@ -95,7 +95,7 @@ namespace kogebogen.Controllers
             return View("Index");
 
         }
-        public string Addfav(int id)
+        public IActionResult Addfav(int id)
         {
             // Finder opskriften baseret på dets ID og sætter det på et nyt Recipe objekt
             Recipe recFav = repo.CookBook.Find(rec => rec.ID == id);
@@ -108,7 +108,7 @@ namespace kogebogen.Controllers
             {
                 user.Favorites.Remove(recFav);
             }
-            return "ok" + id;
+            return View(user);
         }
 
         [HttpPost]
