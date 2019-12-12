@@ -142,6 +142,16 @@ namespace kogebogen.Controllers
         }
 
         [HttpPost]
+        public IActionResult RemoveRecipeFav(int id)
+        {
+            // Finder opskriften via ID
+            Recipe recipe = repo.CookBook.Find(recipe => recipe.ID == id);
+            // Fjerne opskriften med det nye opskrift objekt
+            user.Favorites.Remove(recipe);
+            return View("Addfav", user);
+        }
+
+        [HttpPost]
         public IActionResult EditRecipeOpen(int id)
         {
             // Finder opskriften via ID og sender den tilbage til viewet for at blive redigeret

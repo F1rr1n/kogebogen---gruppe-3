@@ -49,9 +49,9 @@ ViewData["Title"] = "Recipes";
         </form>
 
         <div class="addButtons">
-            <div class="addTo">
-            <button onclick="addFav(@r.ID)" class="fas fa-heart love"></button>
-            </div>
+                <form asp-action="Addfav" asp-controller="Home" method="post" class="addTo">
+                    <button type="submit" class="fas fa-heart love"></button>
+                </form>
 
             <form asp-action="Addtofoodplan" asp-controller="Home" method="post" class="addTo">
                 <input type="hidden" name="r" value="@r.ID" />

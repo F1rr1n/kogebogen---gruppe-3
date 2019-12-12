@@ -22,7 +22,7 @@
             </form>
 
             <div class="addButtons">
-                <form class="myRecipes addTo" method="post" asp-controller="Home" asp-action="RemoveRecipe">
+                <form class="myRecipes addTo" method="post" asp-controller="Home" asp-action="RemoveRecipeFav">
                     <input type="hidden" name="r" value="@r.ID" />
                     <button type="submit" class="fas fa-minus-square"></button>
                 </form>

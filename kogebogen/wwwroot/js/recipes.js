@@ -55,9 +55,4 @@ for (var i = 0; i < favorite.length; i++) {
     favorite[i].addEventListener('click', function () {
         this.style.color = "#960525";
     });
-    
-function addFav(id) {
-    fetch('https://localhost:44391/Home/Addfav/${id}', {
-        method: 'GET'
-    })
 }
