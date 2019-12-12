@@ -1,7 +1,7 @@
 ﻿@using kogebogen.Repository;
 @model Repositories
 @{
-    ViewData["Title"] = "Recipes";
+ViewData["Title"] = "Recipes";
 }
 
 <link rel="stylesheet" type="text/css" href="~/css/recipes.css">
@@ -16,7 +16,8 @@
         20 kr <input type="range" class="slider" id="priceRange" name="rangeInput" min="20" max="120" value="70"> 120 kr
 
         <p id="filterTime"></p>
-        10 min <input type="range" class="slider" id="timeRange" name="rangeInput" min="10" max="180" value="85"> 180 min
+        10 min <input type="range" class="slider" id="timeRange" name="rangeInput" min="10" max="180" value="85"> 180
+        min
     </div>
 </div>
 <br />
@@ -35,44 +36,35 @@
 
 @foreach (Recipe r in Model.CookBook)
 {
-    <div class="recipes">
-        <hr />
-        <div class="flex-container">
-            <!-- Klik ind på den enkelte opskrift -->
-            <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
-                <input type="hidden" name="OpskriftID" value="@r.ID" />
-<<<<<<< HEAD
-                <h2>
-                    <button type="submit" class="theRecipeBtn">@r.Name</button>
-                </h2>
-                <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
-            </form>
-=======
-                <h2 style="width:50vw"><button type="submit">@r.Name</button></h2>
-            </form>
-            <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
-
-                <input type="hidden" name="r" value="@r.ID" />
-                <button onclick="addFav(@r.ID)" class="fas fa-heart"></button>
->>>>>>> 2b2e318a4a1a2530dfdb1e488e34909e6caf85ef
-
-            <div class="addButtons">
-                <form method="post" class="addTo" asp-controller="Home" asp-action="Addfav">
-                    <input type="hidden" name="r" value="@r.ID" />
-                    <button type="button" class="fas fa-heart love"></button>
-                </form>
-
-                <form asp-action="Addtofoodplan" asp-controller="Home" method="post" class="addTo">
-                    <input type="hidden" name="r" value="@r.ID" />
-                    <button type="submit" class="fas fa-calendar-alt"></button>
-                </form>
+<div class="recipes">
+    <hr />
+    <div class="flex-container">
+        <!-- Klik ind på den enkelte opskrift -->
+        <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
+            <input type="hidden" name="OpskriftID" value="@r.ID" />
+            <h2>
+                <button type="submit" class="theRecipeBtn">@r.Name</button>
+            </h2>
+            <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
+        </form>
+        <h2 style="width:50vw"><button type="submit">@r.Name</button></h2>
+        </form>
+        <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
+        
+        <div class="addButtons">
+            <div class="addTo">
+            <button onclick="addFav(@r.ID)" class="fas fa-heart love"></button>
             </div>
+
+            <form asp-action="Addtofoodplan" asp-controller="Home" method="post" class="addTo">
+                <input type="hidden" name="r" value="@r.ID" />
+                <button type="submit" class="fas fa-calendar-alt"></button>
+            </form>
         </div>
-        <p class="totalPrice"> @r.TotalPrice</p>
-        <p class="totalTime"> @r.Time</p>
     </div>
+    <p class="totalPrice"> @r.TotalPrice</p>
+    <p class="totalTime"> @r.Time</p>
+</div>
 }
-
-
 <script src="~/js/recipes.js">
 </script>

@@ -49,18 +49,15 @@ for (var i = 0; i < ranges.length; i++) {
         }
     });
 }
-<<<<<<< HEAD
 var favorite = document.getElementsByClassName("love");
 
 for (var i = 0; i < favorite.length; i++) {
     favorite[i].addEventListener('click', function () {
         this.style.color = "#960525";
     });
-=======
-
+    
 function addFav(id) {
     fetch('https://localhost:44391/Home/Addfav/${id}', {
         method: 'GET'
     })
->>>>>>> 2b2e318a4a1a2530dfdb1e488e34909e6caf85ef
 }
