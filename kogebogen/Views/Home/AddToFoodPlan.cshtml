@@ -4,15 +4,17 @@
 }
 
     <link href="~/css/madplan.css" rel="stylesheet" />
-
-<h1>AddToFoodPlan</h1>
+    <link href="~/css/tilføjtilmadplan.css" rel="stylesheet" />
+<h1>Tilføj til dag</h1>
 
 @foreach (Days days in Model.madplan.days)
 {
+<div class="dage_container">
     <p>@days.Name</p>
     <form method="post" asp-controller="Home" asp-action="AddToPlan">
         <input type="hidden" name="day" value="@days.Name" />
         <input type="hidden" name="rec" value="@Model.madplan.rHolder.ID" />
-        <button type="submit">Tilføj til dag</button>
+        <button class="tilføj" type="submit">Tilføj til dag</button>
     </form>
+</div>
 }
