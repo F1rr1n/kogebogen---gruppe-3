@@ -3,6 +3,8 @@
     ViewData["Title"] = "EditRecipe";
 }
 
+    <link href="~/css/Addrecipe.css" rel="stylesheet" />
+
 <h1>EditRecipe</h1>
 <form asp-controller="Home" asp-action="EditRecipe">
     <h3>Navn på opskrift: <input type="text" name="title" required value="@Model.Name" /></h3>

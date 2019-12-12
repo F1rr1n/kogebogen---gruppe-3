@@ -1,7 +1,7 @@
 ﻿@using kogebogen.Repository;
 @model Repositories
 @{
-ViewData["Title"] = "Recipes";
+    ViewData["Title"] = "Recipes";
 }
 
 <link rel="stylesheet" type="text/css" href="~/css/recipes.css">
@@ -36,30 +36,30 @@ ViewData["Title"] = "Recipes";
 
 @foreach (Recipe r in Model.CookBook)
 {
-<div class="recipes">
-    <hr />
-    <div class="flex-container">
-        <!-- Klik ind på den enkelte opskrift -->
-        <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
-            <input type="hidden" name="OpskriftID" value="@r.ID" />
-            <h2>
-                <button type="submit" class="theRecipeBtn">@r.Name</button>
-            </h2>
-            <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
-        </form>
-
-        <div class="addButtons">
-                    <button onclick="addToFavList(@r.ID)" class="fas fa-heart love"></button>
-
-            <form asp-action="Addtofoodplan" asp-controller="Home" method="post" class="addTo">
-                <input type="hidden" name="r" value="@r.ID" />
-                <button type="submit" class="fas fa-calendar-alt"></button>
+    <div class="recipes">
+        <hr />
+        <div class="flex-container">
+            <!-- Klik ind på den enkelte opskrift -->
+            <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
+                <input type="hidden" name="OpskriftID" value="@r.ID" />
+                <h2>
+                    <button type="submit" class="theRecipeBtn">@r.Name</button>
+                </h2>
+                <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
             </form>
+
+            <div class="addButtons">
+                <button onclick="addToFavList(@r.ID)" class="fas fa-heart love"></button>
+
+                <form asp-action="Addtofoodplan" asp-controller="Home" method="post" class="addTo">
+                    <input type="hidden" name="id" value="@r.ID" />
+                    <button type="submit" class="fas fa-calendar-alt"></button>
+                </form>
+            </div>
         </div>
+        <p class="totalPrice"> @r.TotalPrice</p>
+        <p class="totalTime"> @r.Time</p>
     </div>
-    <p class="totalPrice"> @r.TotalPrice</p>
-    <p class="totalTime"> @r.Time</p>
-</div>
 }
 <script src="~/js/recipes.js">
 </script>

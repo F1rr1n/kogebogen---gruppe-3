@@ -49,13 +49,23 @@ for (var i = 0; i < ranges.length; i++) {
         }
     });
 }
-var favorite = document.getElementsByClassName("love");
 
-for (var i = 0; i < favorite.length; i++) {
-    favorite[i].addEventListener('click', function () {
-        this.style.color = "#960525";
+
+var fav = document.getElementsByClassName("love");
+
+
+for (var i = 0; i < fav.length; i++) {
+    fav[i].style.color = "rgb(45, 77, 36)";
+    fav[i].addEventListener("click", function () {
+        if (this.style.color == "rgb(45, 77, 36)") {
+            this.style.color = "#960525";
+        } else {
+            this.style.color = "#2D4D24";
+        }
     });
 }
+
+
 function addToFavList(id) {
     fetch(`https://localhost:44391/Home/AddFavToList/${id}`, {
         method: 'GET'

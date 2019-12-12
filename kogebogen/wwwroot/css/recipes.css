@@ -76,14 +76,13 @@ hr {
     color: #2D4D24;
 }
 
-#love {
-    color: black;
+.love {
+    color: #2D4D24;
 }
 
 .totalPrice, .totalTime {
     display: none;
 }
-
 
 @keyframes foldOut {
     from {

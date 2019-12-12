@@ -67,7 +67,7 @@ namespace kogebogen.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddRecipeComplete(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide)
+        public IActionResult AddRecipeComplete(string title, List<string> ingredients, List<int> amount, List<string> unit, int time, string description, List<string> guide, string imageUrl)
         {
             // Laver noge nye objekter til at holder værdierne
             Recipe recipe = new Recipe();
@@ -88,6 +88,7 @@ namespace kogebogen.Controllers
             }
             recipe.Time = time;
             recipe.Description = description;
+            recipe.ImageUrl = imageUrl;
             // Indsætter step-by-step guide kronologisk på opskriften
             foreach (string s in guide)
             {
@@ -97,7 +98,7 @@ namespace kogebogen.Controllers
             recipe.ID = repo.CookBook.Count;
             repo.CookBook.Add(recipe);
             user.Own.Add(recipe);
-            return View("Index");
+            return View("Myrecipes", user);
 
         }
         public IActionResult Addfav()
@@ -267,7 +268,7 @@ namespace kogebogen.Controllers
                     user.ShoppingList.Find(n => n.Ingredient.Name == ingredient.Ingredient.Name).amount += ingredient.amount;
                 }
             }
-            return View("Index");
+            return View("ShoppingList", user);
         }
         public IActionResult ShoppingList()
         {
