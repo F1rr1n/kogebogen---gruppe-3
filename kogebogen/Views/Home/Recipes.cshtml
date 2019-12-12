@@ -41,11 +41,20 @@
             <!-- Klik ind på den enkelte opskrift -->
             <form asp-controller="Home" method="post" asp-action="TheRecipe" class="theRecipe">
                 <input type="hidden" name="OpskriftID" value="@r.ID" />
+<<<<<<< HEAD
                 <h2>
                     <button type="submit" class="theRecipeBtn">@r.Name</button>
                 </h2>
                 <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
             </form>
+=======
+                <h2 style="width:50vw"><button type="submit">@r.Name</button></h2>
+            </form>
+            <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
+
+                <input type="hidden" name="r" value="@r.ID" />
+                <button onclick="addFav(@r.ID)" class="fas fa-heart"></button>
+>>>>>>> 2b2e318a4a1a2530dfdb1e488e34909e6caf85ef
 
             <div class="addButtons">
                 <form method="post" class="addTo" asp-controller="Home" asp-action="Addfav">

@@ -1,4 +1,4 @@
-﻿function micro(event)
+﻿function addIng(event)
 {
     event.preventDefault();
     let k = document.createElement("p");
@@ -14,7 +14,7 @@
     document.getElementById("ingredients").appendChild(k);
 }
 
-function test(event)
+function addStep(event)
 {
     event.preventDefault();
     let j = document.createElement("li");

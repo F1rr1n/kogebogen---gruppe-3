@@ -1,12 +1,10 @@
-﻿@using kogebogen.Repository;
-@model Repositories
-
+﻿
 @{
     ViewData["Title"] = "AddRecipe";
 }
 
 <h1>AddRecipe</h1>
-<form method="post" asp-controller="Home" asp-action="AddRecipeTest">
+<form method="post" asp-controller="Home" asp-action="AddRecipeComplete">
     <h3>Navn på opskrift: <input type="text" name="title" required value="sa"/></h3>
     <div id="ingredients">
         <div id="ingredient">
@@ -24,8 +22,8 @@
     </div>
 
 
-    <button onclick="micro()">Tilføj ingrediens</button>
-    <button onclick="remove()">Fjern ingediens</button>
+    <button onclick="addIng(event)">Tilføj ingrediens</button>
+    <button onclick="remove(event)">Fjern ingediens</button>
     <br />
     <input type="number" value="time" name="time" required /> tid i minutter
     <br />
@@ -34,8 +32,8 @@
             <li><input type="text" name="guide" required /></li>
         </ol>
     </div>
-    <button onclick="test()">Tilføj trin</button>
-    <button onclick="fjerntrin()">Fjern Trin</button>
+    <button onclick="addStep(event)">Tilføj trin</button>
+    <button onclick="fjerntrin(event)">Fjern Trin</button>
 
     <button type="submit">Tilføj opskrift</button>
 </form>

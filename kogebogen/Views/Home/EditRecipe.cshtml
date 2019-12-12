@@ -22,7 +22,7 @@
             </div>
         }
     </div>
-    <button onclick="micro(event)">Tilføj ingrediens</button>
+    <button onclick="addIng(event)">Tilføj ingrediens</button>
     <button onclick="remove(event)">Fjern ingediens</button>
     <br />
     <input type="number" value="@Model.Time" name="time" required /> tid i minutter
@@ -35,7 +35,7 @@
             }
         </ol>
     </div>
-    <button onclick="test(event)">Tilføj trin</button>
+    <button onclick="addStep(event)">Tilføj trin</button>
     <button onclick="fjerntrin(event)">Fjern Trin</button>
     <button type="submit">Rediger opskrift</button>
 </form>
