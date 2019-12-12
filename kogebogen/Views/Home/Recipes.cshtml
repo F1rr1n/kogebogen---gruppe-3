@@ -47,10 +47,8 @@ ViewData["Title"] = "Recipes";
             </h2>
             <img src="~/img/@r.ImageUrl" alt="@r.Name" class="theRecipeImg" />
         </form>
-        <h2 style="width:50vw"><button type="submit">@r.Name</button></h2>
-        </form>
         <img src="~/img/@r.ImageUrl" alt="@r.Name" style="width:20vw; height:20vh;" />
-        
+
         <div class="addButtons">
             <div class="addTo">
             <button onclick="addFav(@r.ID)" class="fas fa-heart love"></button>
