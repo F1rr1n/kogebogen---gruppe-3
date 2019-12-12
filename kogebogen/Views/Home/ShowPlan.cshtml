@@ -1,27 +1,42 @@
-﻿@model User
+﻿
+@model User
+
 @{
     ViewData["Title"] = "ShowPlan";
 }
+<link rel="stylesheet" type="text/css" href="~/css/madplan.css">
+<h3>Madplan for ugen</h3>
 
-<h1>Madplan for ugen</h1>
 
 @for (int i = 0; i < Model.madplan.days.Length; i++)
 {
-    @Model.madplan.days[i].Name
-    <br />
+<div class="dage_container">
+    <h3> @Model.madplan.days[i].Name</h3>
+
+
     @if (Model.madplan.days[i].Recipe != null)
     {
-        <form method="post" asp-controller="Home" asp-action="AddToShoppingList">
-            @Model.madplan.days[i].Recipe.Name<br />
-            <input type="hidden" value="@Model.madplan.days[i].Recipe.ID" name="ID"/>
-            <button type="submit">Tilføj til indkøbsliste</button>
-        </form>
-    }
-    else
-    {
-        // Do nothing
-        <br />
-    }
+
+<form class="madplanform" method="post" asp-controller="Home" asp-action="TheRecipe">
+    <input type="hidden" value="@Model.madplan.days[i].Recipe.ID" name="ID" />
+    <h4><button type="submit" class="submit-recipe"> @Model.madplan.days[i].Recipe.Name</button></h4> <br />
+
+    <img src="~/img/@Model.madplan.days[i].Recipe.ImageUrl" alt="Alternate Text" />
+
+</form>
+<form method="post" asp-controller="Home" asp-action="AddToShoppingList">
+    <button type="submit">Tilføj til indkøbsliste</button>
+   <input type="hidden" value="@Model.madplan.days[i].Recipe.ID" name="ID" />
+</form>
+
+            }
+
+            else
+            {
+            // Do nothing
+            <br />
+            }
+    </div>
+    
 }
-<p>Samlet pris for mad:<br /></p>
-@Model.madplan.price kr.
+<p>Samlet pris for mad: @Model.madplan.price kr.<br /></p>

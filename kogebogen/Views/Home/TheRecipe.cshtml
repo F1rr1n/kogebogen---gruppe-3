@@ -2,12 +2,12 @@
 @{
     ViewData["Title"] = "TheRecipe";
 }
-
+    <link rel="stylesheet" type="text/css" href="~/css/therecipe.css">
 <!-- Opskriftens titel og beskrivelse -->
 <h1>@Model.Name</h1>
-<h2>Beskrivelse</h2>
+<h4>Beskrivelse</h4>
 <p>@Model.Description</p>
-
+<img src="~/img/@Model.ImageUrl" alt="@Model.Name" style="max-width: 90vw; max-height:35vh;" />
 <!-- Div-container der indeholder ingredienserne, pris, tid og billede -->
 <div class="ingredients-container" style="display:flex;justify-content:space-between;">
     <div class="ingredients">
@@ -24,18 +24,20 @@
                 </tr>
             }
         </table>
-        <p>Pris i alt: @Model.TotalPrice kr</p>
+        @*<p>Pris i alt: @Model.TotalPrice kr</p>*@
         <p><i class="fas fa-clock"></i> Tid i alt: @Model.Time min</p>
 
     </div>
-    <img src="~/img/@Model.ImageUrl" alt="@Model.Name" style="max-width: 40vw; max-height:35vh;" />
+    
 </div>
 
 <!-- Vejledningen til opskrifterne i et loop, da det er en liste -->
 <h2>Vejledning</h2>
-<ol>
-    @foreach (string guide in Model.Guide)
-    {
-        <li>@guide</li>
-    }
-</ol>
+<div id="guide">
+    <ol class="guide">
+        @foreach (string guide in Model.Guide)
+        {
+            <li class="guide-step">@guide</li>
+        }
+    </ol>
+</div>

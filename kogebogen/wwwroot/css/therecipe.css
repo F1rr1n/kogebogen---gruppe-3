@@ -1,0 +1,27 @@
+﻿body{
+
+    background-color: white;
+    color: black;
+    margin: 5vw;
+    
+}
+p, h2, h3, h1, h4 {
+    color: #2D4D24;
+}
+.guide ol{
+    list-style-type: decimal;
+
+}
+h1{
+    text-align:center;
+}
+#guide{
+ margin: 5vw;
+}
+
+.fa-clock{
+    margin-top:3vh
+}
+td{
+    margin-right: 1.2vw;
+}

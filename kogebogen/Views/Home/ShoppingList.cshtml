@@ -3,13 +3,21 @@
     ViewData["Title"] = "ShoppingList";
 }
 
-<h1>ShoppingList</h1>
+<link rel="stylesheet" type="text/css" href="~/css/Shoppinglist.css">
 
-@foreach (ModelIngredient i in Model.ShoppingList)
-{
-    <tr>
-        <td>@i.amount</td>
-        <td>@i.Ingredient.Unit</td>
-        <td>@i.Ingredient.Name</td>
-    </tr>
-}
+<h1>ShoppingList</h1>
+<table>
+    @foreach (ModelIngredient i in Model.ShoppingList)
+    {
+
+        <tr>
+            <td>@i.amount</td>
+            <td>@i.Ingredient.Unit</td>
+            <td>@i.Ingredient.Name</td>
+        </tr>
+
+    }
+</table>
+
+<p>Pris i alt @Model.madplan.price,- kr</p>
+

@@ -1,15 +1,36 @@
-﻿
+﻿@using kogebogen.Repository;
+@model Repositories
+
 @{
     ViewData["Title"] = "AddRecipe";
 }
+<link rel="stylesheet" type="text/css" href="~/css/Addrecipe.css">
+<script>    function preview_image(event)
+{
+    var reader = new FileReader();
+    reader.onload = function () {
+        var output = document.getElementById('output_image');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}</script>
+<h3>AddRecipe</h3>
 
-<h1>AddRecipe</h1>
-<form method="post" asp-controller="Home" asp-action="AddRecipeComplete">
-    <h3>Navn på opskrift: <input type="text" name="title" required value="sa"/></h3>
-    <div id="ingredients">
-        <div id="ingredient">
+
+<form method="post" asp-controller="Home" asp-action="AddRecipeTest">
+
+    <h3>1. Navn på opskrift:</h3> <input placeholder="Title" type="text" name="title" required />
+
+    <div id="wrapper">
+        <h3>2. Vælg et billede</h3>
+        <input type="file" accept="image/*" onchange="preview_image(event)">
+        <img id="output_image" />
+    </div>
+    
+        <div id="ingredients">
+            <h3>3. Tilføj ingrediens:</h3>
             <p>
-                Tilføj ingrediens: <input type="text" name="ingredients" required /> <input type="number" value="amount" name="amount" required />
+                <input type="text" placeholder="Ingredient" name="ingredients" required /> <input type="number" placeholder="Mængde" value="amount" name="amount" required />
                 <select required name="unit">
                     <option value="stk">stk</option>
                     <option value="g">g</option>
@@ -18,24 +39,28 @@
                     <option value="spsk">spsk</option>
                 </select>
             </p>
+
         </div>
-    </div>
 
+        <div class="plus-minus">
+            <button class="fas fa-plus" onclick="micro(event)"></button>  <br />
+            <button class="fas fa-minus" onclick="remove(event)"></button>
 
-    <button onclick="addIng(event)">Tilføj ingrediens</button>
-    <button onclick="remove(event)">Fjern ingediens</button>
-    <br />
-    <input type="number" value="time" name="time" required /> tid i minutter
-    <br />
+        </div>
+        
+    <h3 class="tid">4. tid i minutter</h3> <input type="number" placeholder="Tilberedningstid" value="time" name="time" required />
+    <br/>
     <div>
+        <h3>5. Fremgangsmåde</h3>
         <ol id="description_steps">
-            <li><input type="text" name="guide" required /></li>
+            <li><input type="text" name="guide" placeholder="Første trin" required /></li>
         </ol>
     </div>
-    <button onclick="addStep(event)">Tilføj trin</button>
-    <button onclick="fjerntrin(event)">Fjern Trin</button>
-
-    <button type="submit">Tilføj opskrift</button>
+    <div class="plus-minus">
+        <button class="fas fa-plus" onclick="test(event)"></button><br />
+        <button class="fas fa-minus" onclick="fjerntrin(event)"></button>
+    </div>
+    <button class="submit" type="submit">Tilføj</button>
 </form>
 <script src="~/js/AddIngredient.js">
 

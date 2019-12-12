@@ -1,0 +1,59 @@
+﻿
+
+body {
+    background-color: #f7f7f7;
+    color: black;
+}
+.dage_container h3, h2, h1, h4, p {
+    color: #2D4D24;
+    text-align: center;
+}
+h3 {
+    color: black;
+    text-align: center;
+    color: #2D4D24;
+}
+
+.dage_container{
+    border:0 solid;
+    width: 42vw;
+    height: 35vh;
+    display: inline-block;
+    background-color: white;
+    margin: 2vh;
+    position:relative;
+
+}
+.dage_container:last-of-type{
+    left: 25%;
+}
+.submit-recipe {
+    color: #2D4D24;
+}
+
+.dage_container img{
+    width: 42vw;
+    height: 20vh;
+    position:absolute;
+
+}
+.madplanform{
+    display: inline-flex;
+}
+
+.dage_container h4 {
+    position: relative;
+    top: 20vh;
+    
+}
+.dage_container button {
+    position: absolute;
+    bottom: 0;
+    color: #2D4D24;
+    font-weight: bold;
+}
+
+h4 button{
+    position:relative!important;
+}
+
