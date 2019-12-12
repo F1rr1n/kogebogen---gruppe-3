@@ -6,6 +6,10 @@ body {
     background-color: #2D4D24;
 }
 
+main {
+    position: unset;
+}
+
 h1, h2, h3, p, button, a {
     color: white;
 }
