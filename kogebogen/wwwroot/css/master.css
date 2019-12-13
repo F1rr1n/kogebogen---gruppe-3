@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 main {
     position: relative;
-    top: 8vh;
+    top: 10vh;
 }
 
 .navBar {
@@ -14,7 +18,7 @@ main {
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     background-position: bottom;
-    height: 8vh;
+    height: 10vh;
     width: 100vw;
     align-items: center;
     display: flex;
@@ -73,6 +77,10 @@ button, a {
     z-index: 1;
 }
 
+button:focus, a:focus, form:focus {
+    outline: none;
+}
+
 #swipeField {
     position: fixed;
     top: 0;
@@ -82,13 +90,15 @@ button, a {
 }
 
 .searchForm {
-    position: relative;
-    top: 8vh;
+    position: fixed;
+    top: 10vh;
+    width: 100%;
     background-color: #2D4D24;
     margin: -0.2% 0px 0px;
     align-items: center;
     padding: 2% 5% 4%;
     animation: search 0.3s forwards ease-in;
+    z-index: 4;
 }
 
 @keyframes search {
@@ -170,9 +180,13 @@ button, a {
     font-size: 1.4rem;
 }
 
-.profileModal img {
-    width: 100%;
+.profileModal .profileImg {
     height: 25vh;
+    width: 100%;
+    background-image: url(/img/lasse.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .profileModal h2 {
